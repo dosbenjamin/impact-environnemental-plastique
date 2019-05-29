@@ -1,0 +1,35 @@
+.data {
+  border-radius: 100%;
+  width: 80vw;
+  height: 80vw;
+  background-color: $c-green;
+  position: relative;
+  margin: rythm-units(2) auto 0 auto;
+
+  &--darkGrey {
+    background-color: $c-dark-grey;
+  }
+
+  &--middleGrey {
+    background-color: $c-middle-grey;
+  }
+}
+
+// Production
+.data[data-stats="2019"] {
+  height: calc(100% / 6);
+  width: calc(100% / 6);
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  margin: 0;
+}
+
+.data[data-stats="1960"] {
+  height: calc(100% / 12);
+  width: calc(100% / 12);
+  position: absolute;
+  top: 65%;
+  right: 30%;
+  margin: 0;
+}

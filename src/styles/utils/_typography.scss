@@ -61,8 +61,14 @@ p {
   margin: 0;
 }
 
-.os-numbs {
+.old-style {
   font-variant-numeric: oldstyle-nums;
+  font-feature-settings: "onum";
+}
+
+.fraction {
+  font-variant-numeric: diagonal-fractions;
+  font-feature-settings: "frac";
 }
 
 .big-text {
@@ -73,6 +79,16 @@ p {
   font-size: map-get($ms, 3);
   line-height: 0.95;
   font-weight: 700;
+  margin: 0 0 rythm-units(1) 0;
+
+  &::after {
+    content: "";
+    display: block;
+    margin-top: rythm-units(0.5);
+    height: 6px;
+    width: rythm-units(1);
+    background-color: $c-green;
+  }
 
   &--headline {
     line-height: 1.1;
@@ -95,5 +111,13 @@ p {
       z-index: -1;
       border: 10px solid $c-green;
     }
+
+    &::after {
+      display: none;
+    }
   }
+}
+
+.line-break {
+  display: block;
 }

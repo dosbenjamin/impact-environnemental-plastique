@@ -1,13 +1,21 @@
+// Colors
 $c-green: #9bffe7;
 $c-green-bright: #5effd8;
 $c-light-grey: #f2f2f2;
 $c-middle-grey: #c4c4c4;
 $c-dark-grey: #383838;
 
-$size-text: 18px;
+// Typography
+$text-size: 18px;
 $leading: 1.56;
-$unit-value: $size-text * $leading;
-
-@function rythmUnits($number) {
-  @return $unit-value * $number;
-}
+$unit-value: $text-size * $leading;
+$ms: (
+  _1: 0.75rem,
+  0: 1rem,
+  1: 1.333rem,
+  2: 1.777rem,
+  3: 2.369rem,
+  4: 3.157rem,
+  5: 4.209rem,
+  6: 5.61rem
+);

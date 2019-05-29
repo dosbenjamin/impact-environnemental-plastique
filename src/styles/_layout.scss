@@ -1,0 +1,3 @@
+@function rythmUnits($number) {
+  @return $unit-value * $number;
+}

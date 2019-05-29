@@ -1,3 +1,49 @@
+@keyframes moving {
+  0% {
+    transform: translate(0, 40%);
+  }
+
+  10% {
+    transform: translate(10%, 30%);
+  }
+
+  20% {
+    transform: translate(5%, 25%);
+  }
+
+  30% {
+    transform: translate(20%, 20%);
+  }
+
+  40% {
+    transform: translate(5%, 15%);
+  }
+
+  50% {
+    transform: translate(20%, 40%);
+  }
+
+  60% {
+    transform: translate(30%, 10%);
+  }
+
+  70% {
+    transform: translate(5%, 25%);
+  }
+
+  80% {
+    transform: translate(30%, 20%);
+  }
+
+  90% {
+    transform: translate(20%, 10%);
+  }
+
+  100% {
+    transform: translate(0, 30%);
+  }
+}
+
 .data {
   border-radius: 100%;
   width: 80vw;
@@ -23,6 +69,10 @@
   top: 20%;
   left: 15%;
   margin: 0;
+  animation-name: moving;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .data[data-stats="1960"] {
@@ -32,4 +82,14 @@
   top: 65%;
   right: 30%;
   margin: 0;
+  animation-name: moving;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+.infos {
+  &__item {
+    display: none;
+  }
 }

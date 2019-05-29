@@ -2,38 +2,10 @@
   @return $unit-value * $number;
 }
 
-.section {
-  padding: 0 rythm-units(1);
+body {
+  overflow-x: hidden;
 }
 
-.header {
-  position: relative;
-  overflow: hidden;
-  padding-top: rythm-units(3);
-  padding-bottom: rythm-units(2);
-
-  &::before {
-    @include pseudo;
-
-    background-color: $c-green-bright;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -2;
-  }
-
-  // &::after {
-  //   content: "";
-  //   display: block;
-  //   height: 200%;
-  //   width: 200%;
-  //   background-color: #fff;
-  //   position: absolute;
-  //   border-radius: 100%;
-  //   top: -50%;
-  //   left: -50%;
-  //   transform: translate(0, -45%);
-  //   z-index: -1;
-  // }
+.section {
+  padding: rythm-units(2) rythm-units(1);
 }

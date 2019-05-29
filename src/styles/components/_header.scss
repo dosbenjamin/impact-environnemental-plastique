@@ -1,0 +1,36 @@
+.header {
+  position: relative;
+  overflow: hidden;
+  padding-top: rythm-units(3);
+
+  &::before {
+    @include pseudo;
+
+    background-color: $c-green-bright;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+  }
+}
+
+.menu {
+  &__button {
+    background-image: url(../assets/images/menu.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 100%;
+    width: 1rem;
+    height: 1rem;
+    text-indent: 100%;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    top: rythm-units(1);
+    right: rythm-units(1);
+    outline: 0;
+    border: 0;
+  }
+}

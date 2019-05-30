@@ -8,6 +8,47 @@ body {
 
 .section {
   padding: rythm-units(2) rythm-units(1);
+
+  &--grey {
+    position: relative;
+
+    &::before {
+      @include pseudo;
+
+      height: 100%;
+      width: 100vw;
+      background-color: $c-light-grey;
+      z-index: -1;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.plasticImg {
+  position: relative;
+
+  &::before {
+    @include pseudo;
+
+    border-radius: 100%;
+    top: -40%;
+    right: -35%;
+    height: 100vw;
+    width: 100vw;
+    z-index: -1;
+    background-color: $c-green-bright;
+  }
+
+  &__item {
+    display: block;
+    margin: rythm-units(2) 0 rythm-units(2) rythm-units(-1);
+  }
+}
+
+.use {
+  overflow-x: hidden;
 }
 
 .today {

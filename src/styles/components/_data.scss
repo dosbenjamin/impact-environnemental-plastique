@@ -88,6 +88,45 @@
   animation-direction: alternate-reverse;
 }
 
+.data[data-stats="1950"] {
+  height: calc(100% / 12);
+  width: calc(100% / 12);
+  position: absolute;
+  top: 65%;
+  right: 30%;
+  margin: 0;
+  animation-name: moving;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+.data[data-stats="unique"] {
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  top: 5%;
+  right: 30%;
+  margin: 0;
+  animation-name: moving;
+  animation-duration: 120s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+.data[data-stats="packaging"] {
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  bottom: 30%;
+  left: 20%;
+  margin: 0;
+  animation-name: moving;
+  animation-duration: 80s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
 .infos {
   margin: 0;
   padding: 0;
@@ -134,11 +173,13 @@
 
   &__number {
     text-transform: uppercase;
-    display: block;
   }
 
   &__small {
     font-size: map-get($ms, _1);
+    max-width: 15rem;
+    display: block;
+    line-height: 1.12;
   }
 
   &__button {
@@ -169,4 +210,10 @@
   max-width: 15rem;
   margin: rythm-units(1) auto 0 auto;
   line-height: 1.12;
+}
+
+.use {
+  .infos__item {
+    background-color: #fff;
+  }
 }

@@ -56,4 +56,9 @@
     position: relative;
     z-index: 2;
   }
+
+  &__doc {
+    display: inline-block;
+    text-indent: 29px;
+  }
 }

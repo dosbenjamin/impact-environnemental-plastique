@@ -1,5 +1,4 @@
 const datas = document.querySelectorAll('.data')
-const dataReference = document.querySelector('.data[data-stats="2050"]')
 
 datas.forEach(data => {
   data.addEventListener('click', e => {

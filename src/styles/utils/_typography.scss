@@ -75,6 +75,12 @@ p {
   font-size: map-get($ms, 1);
 }
 
+.use {
+  .big-text {
+    text-align: right;
+  }
+}
+
 .title {
   font-size: map-get($ms, 3);
   line-height: 0.95;
@@ -87,7 +93,7 @@ p {
     margin-top: rythm-units(0.5);
     height: 6px;
     width: rythm-units(1);
-    background-color: $c-green;
+    background-color: $c-green-bright;
   }
 
   &--headline {

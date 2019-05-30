@@ -33,7 +33,7 @@ body {
     @include pseudo;
 
     border-radius: 100%;
-    top: -40%;
+    top: -35%;
     right: -35%;
     height: 100vw;
     width: 100vw;
@@ -47,10 +47,17 @@ body {
   }
 }
 
+.today {
+  padding-bottom: 0;
+}
+
 .use {
   overflow-x: hidden;
 }
 
-.today {
-  padding-bottom: 0;
+.animalsImg {
+  display: block;
+  margin-top: rythm-units(2);
+  margin-bottom: rythm-units(2);
+  margin-left: rythm-units(1);
 }

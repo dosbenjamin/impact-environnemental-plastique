@@ -75,7 +75,7 @@
   animation-direction: alternate;
 }
 
-.data[data-stats="1960"] {
+.data[data-stats="1950"] {
   height: calc(100% / 12);
   width: calc(100% / 12);
   position: absolute;
@@ -89,7 +89,84 @@
 }
 
 .infos {
+  margin: 0;
+  padding: 0;
+
   &__item {
-    display: none;
+    background-color: $c-light-grey;
+    padding: rythm-units(1);
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+
+    &--active {
+      display: inline-block;
+      visibility: visible;
+      opacity: 1;
+    }
   }
+
+  &__title {
+    font-size: map-get($ms, _1);
+    line-height: 1.12;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0;
+    margin-bottom: rythm-units(1);
+
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: rythm-units(0.5);
+      background-color: $c-dark-grey;
+      margin-top: rythm-units(0.25);
+    }
+  }
+
+  p {
+    line-height: 1;
+  }
+
+  &__number {
+    text-transform: uppercase;
+    display: block;
+  }
+
+  &__small {
+    font-size: map-get($ms, _1);
+  }
+
+  &__button {
+    position: absolute;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background-image: url(../assets/images/cross.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: top right;
+    background-size: 50%;
+    width: rythm-units(1);
+    height: rythm-units(1);
+    outline: none;
+    border: none;
+    padding: 0;
+    top: rythm-units(0.5);
+    right: rythm-units(0.5);
+  }
+}
+
+.instruction {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: map-get($ms, _1);
+  max-width: 15rem;
+  margin: rythm-units(1) auto 0 auto;
+  line-height: 1.12;
 }

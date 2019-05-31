@@ -1,47 +1,46 @@
-// // Montserrat Regular
-// @font-face {
-//   font-family: Montserrat;
-//   font-style: normal;
-//   font-weight: 400;
-//   font-display: swap;
-//   src:
-//     url("../assets/fonts/montserrat-v13-latin-regular.woff2") format("woff2"),
-//     url("../assets/fonts/montserrat-v13-latin-regular.woff") format("woff");
-// }
+// Montserrat Regular
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url("../assets/fonts/montserrat-v13-latin-regular.woff2") format("woff2"),
+    url("../assets/fonts/montserrat-v13-latin-regular.woff") format("woff");
+}
 
-// // Montserrat Medium
-// @font-face {
-//   font-family: Montserrat;
-//   font-style: normal;
-//   font-weight: 500;
-//   font-display: swap;
-//   src:
-//     url("../assets/fonts/montserrat-v13-latin-500.woff2") format("woff2"),
-//     url("../assets/fonts/montserrat-v13-latin-500.woff") format("woff");
-// }
+// Montserrat Medium
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url("../assets/fonts/montserrat-v13-latin-500.woff2") format("woff2"),
+    url("../assets/fonts/montserrat-v13-latin-500.woff") format("woff");
+}
 
-// // Montserrat Semi-Bold
-// @font-face {
-//   font-family: Montserrat;
-//   font-style: normal;
-//   font-weight: 600;
-//   font-display: swap;
-//   src:
-//     url("../assets/fonts/montserrat-v13-latin-600.woff2") format("woff2"),
-//     url("../assets/fonts/montserrat-v13-latin-600.woff") format("woff");
-// }
+// Montserrat Semi-Bold
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src:
+    url("../assets/fonts/montserrat-v13-latin-600.woff2") format("woff2"),
+    url("../assets/fonts/montserrat-v13-latin-600.woff") format("woff");
+}
 
-// // Montserrat Bold
-// @font-face {
-//   font-family: Montserrat;
-//   font-style: normal;
-//   font-weight: 700;
-//   font-display: swap;
-//   src:
-//     url("../assets/fonts/montserrat-v13-latin-700.woff2") format("woff2"),
-//     url("../assets/fonts/montserrat-v13-latin-700.woff") format("woff");
-// }
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap&subset=latin-ext");
+// Montserrat Bold
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url("../assets/fonts/montserrat-v13-latin-700.woff2") format("woff2"),
+    url("../assets/fonts/montserrat-v13-latin-700.woff") format("woff");
+}
 
 html {
   font-size: $text-size;
@@ -71,13 +70,29 @@ p {
   font-feature-settings: "frac";
 }
 
-.big-text {
-  font-size: map-get($ms, 1);
+.lineBreak {
+  display: block;
 }
 
-.use {
-  .big-text {
+.bigText {
+  font-size: map-get($ms, 1);
+
+  &--right {
     text-align: right;
+  }
+}
+
+.tiny {
+  font-size: map-get($ms, _1);
+  max-width: 15rem;
+  line-height: 1.12;
+  display: block;
+
+  &--center {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.56;
   }
 }
 
@@ -122,8 +137,39 @@ p {
       display: none;
     }
   }
+
+  &--small {
+    font-size: map-get($ms, _1);
+    line-height: 1.12;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    &::after {
+      height: 2px;
+      width: rythm-units(0.5);
+      background-color: $c-dark-grey;
+      margin-top: rythm-units(0.25);
+    }
+  }
 }
 
-.line-break {
-  display: block;
+.link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+
+  &:focus {
+    outline: 2px dashed $c-green-bright;
+    outline-offset: 6px;
+  }
+
+  &:hover {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &--green {
+    color: $c-green;
+  }
 }

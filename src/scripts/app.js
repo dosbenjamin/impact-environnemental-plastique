@@ -19,10 +19,9 @@ infoButton.forEach(button => {
   })
 })
 
-const dataOne = document.querySelector('.data[data-stats="2050"')
-const dataTwo = document.querySelector('.data[data-stats="year"')
-const dataThree = document.querySelector('.data[data-stats="yearBis"')
-const dataAll = [dataOne, dataTwo, dataThree]
+// const dataOne = document.querySelector('.data[data-stats="2050"')
+// const dataTwo = document.querySelector('.data[data-stats="year"')
+// const dataThree = document.querySelector('.data[data-stats="yearBis"')
 
 // window.addEventListener('scroll', () => {
 //   const active = document.querySelector('.infos__item--active')

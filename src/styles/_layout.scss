@@ -14,9 +14,10 @@ ul {
 
 .section {
   position: relative;
+  overflow: hidden;
   padding: rythm-units(2) rythm-units(1);
 
-  &::before {
+  &:not(.section--header)::before {
     @include pseudo;
 
     height: 100%;
@@ -42,42 +43,56 @@ ul {
       background-color: $c-dark-grey;
     }
   }
+
+  &--header {
+    padding-top: rythm-units(3);
+
+    &::before {
+      @include pseudo;
+
+      background-color: $c-green-bright;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -2;
+    }
+  }
+
+  &--today {
+    padding-bottom: 0;
+  }
 }
 
-.plasticImg {
+.circlePic {
   position: relative;
 
   &::before {
     @include pseudo;
 
     border-radius: 100%;
-    top: -35%;
+    top: -45%;
     right: -35%;
     height: 100vw;
     width: 100vw;
     z-index: -1;
     background-color: $c-green-bright;
   }
+}
 
-  &__item {
-    display: block;
-    margin: rythm-units(2) 0 rythm-units(2) rythm-units(-1);
+.pic {
+  position: relative;
+  display: block;
+  margin: rythm-units(2) 0 rythm-units(2) rythm-units(-1);
+
+  &--right {
+    margin: rythm-units(2) 0 rythm-units(2) rythm-units(1);
   }
 }
 
-.today {
-  padding-bottom: 0;
-}
-
-.use {
-  overflow-x: hidden;
-}
-
-.animalsImg {
-  display: block;
-  margin-top: rythm-units(2);
-  margin-bottom: rythm-units(2);
-  margin-left: rythm-units(1);
+.footer {
+  position: relative;
+  z-index: 2;
 }
 
 .footerMenu {
@@ -91,5 +106,10 @@ ul {
     &:last-child {
       margin-bottom: rythm-units(2);
     }
+  }
+
+  + .tiny {
+    line-height: 1.5;
+    letter-spacing: 0.5px;
   }
 }

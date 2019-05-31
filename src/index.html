@@ -8,7 +8,7 @@
     <script defer src="scripts/app.js"></script>
   </head>
   <body>
-    <header class="section header">
+    <header class="section section--header">
       <nav class="menu">
         <button class="menu__button">Menu</button>
         <ul style="display: none" class="menu__container">
@@ -18,17 +18,19 @@
         </ul>
       </nav>
       <h1 class="title title--headline">
-        Impact environnemental du cicle de vie des plastiques
+        Impact environnemental <span class="lineBreak"></span>
+        du cicle de vie <span class="lineBreak"></span>
+        des plastiques
       </h1>
       <p class="bigText">
         Des emballages aux automobiles en passant par l'électronique, le
         plastique a révolutionné la vie de l'homme. Depuis plus
         <span class="old-style">50</span> ans, il fait couramment parti de notre
-        quotidien et est présent dans la quasi totalité des secteurs.
+        quotidien et est présent dans la quasi totalité des secteurs. ft
       </p>
     </header>
     <main>
-      <section class="section today">
+      <section class="section section--today">
         <p>
           Aujourd'hui seulement, nous découvrons l'impact qu'a le cycle de vie
           du plastique sur la santé et l'environnement. Nous vivons une période
@@ -57,7 +59,7 @@
           </blockquote>
         </figure>
       </section>
-      <section class="section production">
+      <section class="section">
         <h2 class="title">
           Produ-
           <span class="lineBreak"></span>
@@ -82,7 +84,7 @@
         <ul class="infos">
           <li class="infos__item" data-info="2050">
             <h3 class="title title--small">
-              Production<span class="lineBreak"></span>d'ici 2050
+              Production<span class="lineBreak"></span> d'ici 2050
             </h3>
             <p>
               <strong class="infos__number">1800 millions</strong>
@@ -112,7 +114,7 @@
           </li>
         </ul>
       </section>
-      <section class="section section--grey use">
+      <section class="section section--grey">
         <h2 class="title">
           Utili-
           <span class="lineBreak"></span>
@@ -122,9 +124,9 @@
           L'un des principales cause de la pollution plastique est l'utilisation
           de plastique à usage unique.
         </p>
-        <div class="plasticImg">
+        <div class="circlePic">
           <img
-            class="plasticImg__item"
+            class="pic"
             src="assets/images/sacs-plastiques.jpg"
             alt="Sacs en plastiques"
           />
@@ -188,7 +190,7 @@
           </li>
         </ul>
       </section>
-      <section class="section end">
+      <section class="section" id="lastSection">
         <h2 class="title">
           Fin
           <span class="lineBreak"></span>
@@ -200,7 +202,7 @@
           être ingéré par les animaux et contamine les eaux.
         </p>
         <img
-          class="animalsImg"
+          class="pic pic--right"
           src="assets/images/plastique-animaux.jpg"
           alt=""
         />
@@ -303,7 +305,7 @@
       </div>
       <div class="section section--darkGrey">
         <ul class="footerMenu" >
-          <li class="footerMenu__item" ><a class="link" href="">Case study</a></li>
+          <li class="footerMenu__item" ><a class="link" href="case-study.html">Case study</a></li>
           <li class="footerMenu__item" ><a class="link" href="a-propos.html">À propos</a></li>
           <li class="footerMenu__item" ><a class="link" href="credits.html">Crédits</a></li>
         </ul>

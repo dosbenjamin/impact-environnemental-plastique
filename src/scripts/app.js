@@ -51,3 +51,22 @@ setInterval(() => {
   }, 250)
   counterSecond.before(counterFirst)
 }, 5000)
+
+// const footer = document.querySelector('.footer')
+// const lastSection = document.querySelector('#lastSection')
+// let scrollValue = 0
+
+// window.addEventListener('scroll', () => {
+//   const sectionHeight = lastSection.getBoundingClientRect().height
+//   const windowHeight = window.innerHeight
+//   console.log(window.scrollY)
+//   console.log(lastSection.getBoundingClientRect())
+
+//   if (
+//     lastSection.getBoundingClientRect().top <=
+//     windowHeight - sectionHeight + 20
+//   ) {
+//     scrollValue -= 2
+//     footer.style.marginTop = `${scrollValue}px`
+//   }
+// })

@@ -37,7 +37,6 @@
 
   &__content {
     margin-bottom: rythm-units(1);
-    line-height: 1.6;
     position: relative;
     z-index: 2;
 
@@ -54,11 +53,13 @@
   &__author {
     font-style: normal;
     position: relative;
+    line-height: 1.25;
+    display: block;
     z-index: 2;
   }
 
   &__doc {
     display: inline-block;
-    text-indent: 29px;
+    text-indent: 26px;
   }
 }

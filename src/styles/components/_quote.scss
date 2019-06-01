@@ -5,6 +5,7 @@
   @include desktop {
     margin: rythm-units-desktop(3) 0 0 0;
     width: 100%;
+    position: relative;
   }
 
   &__image {
@@ -33,7 +34,8 @@
     @include desktop {
       margin-top: rythm-units-desktop(-1);
       left: 0;
-      overflow: visible;
+      // overflow: visible;
+      position: initial;
       width: 100%;
       box-shadow: none;
     }
@@ -68,6 +70,12 @@
       border-radius: 100%;
 
       @include desktop {
+        height: rythm-units-desktop(35);
+        width: rythm-units-desktop(35);
+        left: -40%;
+        top: 0;
+        margin-top: auto;
+        z-index: -1;
         display: none;
       }
     }

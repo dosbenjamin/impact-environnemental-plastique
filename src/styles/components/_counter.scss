@@ -36,6 +36,11 @@
     text-transform: uppercase;
     line-height: 0.9;
 
+    @include desktop {
+      height: 50vmin;
+      width: 50vmin;
+    }
+
     &::before {
       @include pseudo;
 
@@ -44,6 +49,17 @@
       background-color: $c-green-bright;
       z-index: -1;
       border-radius: 100%;
+      border: 10px solid $c-green;
+      box-sizing: border-box;
+
+      @include desktop {
+        border: 20px solid $c-green;
+      }
+
+      @include desktop {
+        height: 50vmin;
+        width: 50vmin;
+      }
     }
   }
 

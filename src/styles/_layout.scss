@@ -52,13 +52,23 @@ ul {
     &::before {
       background-color: $c-dark-grey;
     }
+
+    @include desktop {
+      padding-top: rythm-units-desktop(4);
+      padding-bottom: rythm-units-desktop(4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   &--header {
     padding-top: rythm-units(3);
 
     @include desktop {
-      padding: rythm-units-desktop(6) rythm-units-desktop(4);
+      padding:
+        rythm-units-desktop(6) 0 rythm-units-desktop(6)
+        rythm-units-desktop(5);
       overflow: visible;
     }
 
@@ -86,6 +96,10 @@ ul {
 
   &--today {
     padding-bottom: 0;
+
+    @include desktop {
+      overflow: initial;
+    }
   }
 
   @include desktop {
@@ -108,6 +122,10 @@ ul {
     width: 100vw;
     z-index: -1;
     background-color: $c-green-bright;
+
+    @include desktop {
+      display: none;
+    }
   }
 }
 
@@ -118,6 +136,11 @@ ul {
 
   &--right {
     margin: rythm-units(2) 0 rythm-units(2) rythm-units(1);
+
+    @include desktop {
+      height: 500px;
+      margin: rythm-units-desktop(3) 0 rythm-units-desktop(3) 0;
+    }
   }
 }
 
@@ -130,17 +153,31 @@ ul {
   &__item {
     text-align: center;
 
+    @include desktop {
+      text-align: left;
+    }
+
     &:not(:last-child) {
       margin-bottom: rythm-units(1);
     }
 
     &:last-child {
       margin-bottom: rythm-units(2);
+
+      @include desktop {
+        margin-bottom: 0;
+      }
     }
   }
 
   + .tiny {
     line-height: 1.5;
     letter-spacing: 0.5px;
+
+    @include desktop {
+      margin: 0;
+      align-self: flex-end;
+      text-align: right;
+    }
   }
 }

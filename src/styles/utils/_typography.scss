@@ -96,6 +96,12 @@ p {
   }
 }
 
+.hyphenated {
+  &::after {
+    content: "-";
+  }
+}
+
 .bigText {
   font-size: map-get($ms, 1);
   line-height: 1.4;
@@ -209,14 +215,20 @@ p {
     outline-offset: 6px;
   }
 
-  &:hover {
-    &:focus {
-      outline: none;
+  @include desktop {
+    &:hover {
+      color: $c-green-bright;
     }
   }
 
   &--green {
     color: $c-green;
+
+    @include desktop {
+      &:hover {
+        color: $c-middle-grey;
+      }
+    }
   }
 }
 

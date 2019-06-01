@@ -33,23 +33,24 @@ infoButton.forEach(button => {
 //   }
 // })
 
-const counterFirst = document.querySelector('.counter__item--first')
-const counterSecond = document.querySelector('.counter__item--second')
 let counter = 0
 let nextCounter = 0.25
-
 setInterval(() => {
-  nextCounter += 0.25
+  const firstChild = document.querySelector('.counter__item:first-child')
+  const lastChild = document.querySelector('.counter__item:last-child')
   counter += 0.25
-  counterFirst.textContent = nextCounter
-  counterSecond.textContent = counter
-  counterFirst.classList.add('counter__item--translate')
-  counterSecond.classList.add('counter__item--translate')
+  nextCounter += 0.25
+  firstChild.classList.add('counter__item--translate')
+  lastChild.classList.add('counter__item--translate')
+
+  firstChild.textContent = counter
+  lastChild.textContent = nextCounter
+
   setTimeout(() => {
-    counterFirst.classList.remove('counter__item--translate')
-    counterSecond.classList.remove('counter__item--translate')
-  }, 250)
-  counterSecond.before(counterFirst)
+    firstChild.before(lastChild)
+    firstChild.classList.remove('counter__item--translate')
+    lastChild.classList.remove('counter__item--translate')
+  }, 300)
 }, 5000)
 
 // const footer = document.querySelector('.footer')

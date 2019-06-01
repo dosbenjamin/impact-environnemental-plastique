@@ -57,11 +57,12 @@
   &__item {
     height: map-get($ms, 6);
     display: block;
-    transform: translateY(-100%);
+    position: relative;
+    top: -100%;
     transition: transform 250ms;
 
     &--translate {
-      transform: translateY(0);
+      transform: translateY(100%);
     }
   }
 

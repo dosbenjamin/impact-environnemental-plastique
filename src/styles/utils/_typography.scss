@@ -46,6 +46,10 @@
 
 html {
   font-size: $text-size;
+
+  @include desktop {
+    font-size: $text-size-desktop;
+  }
 }
 
 body {
@@ -59,10 +63,15 @@ body {
   -webkit-font-feature-settings: "liga", "clig";
   font-feature-settings: "liga", "clig";
   color: $c-dark-grey;
+
+  @include desktop {
+    line-height: $leading-desktop;
+  }
 }
 
 p {
   margin: 0;
+  max-width: 28rem;
 }
 
 .old-style {
@@ -81,14 +90,23 @@ p {
 
 .lineBreak {
   display: block;
+
+  &--notDesktop {
+    display: initial;
+  }
 }
 
 .bigText {
   font-size: map-get($ms, 1);
   line-height: 1.4;
+  max-width: 34rem;
 
   &--right {
     text-align: right;
+
+    @include desktop {
+      margin-left: auto;
+    }
   }
 }
 
@@ -111,6 +129,11 @@ p {
   font-weight: 700;
   margin: 0 0 rythm-units(1) 0;
 
+  @include desktop {
+    font-size: map-get($ms, 4);
+    margin: 0 0 rythm-units-desktop(2) 0;
+  }
+
   &::after {
     content: "";
     display: block;
@@ -118,6 +141,11 @@ p {
     height: 6px;
     width: rythm-units(1);
     background-color: $c-green-bright;
+
+    @include desktop {
+      margin-top: rythm-units-desktop(1);
+      height: 7px;
+    }
   }
 
   &--headline {
@@ -127,6 +155,11 @@ p {
     position: relative;
     padding-bottom: rythm-units(3);
     margin-bottom: rythm-units(2);
+
+    @include desktop {
+      font-size: map-get($ms, 4);
+      padding: 0;
+    }
 
     &::before {
       @include pseudo;
@@ -140,6 +173,10 @@ p {
       transform: translateX(-50%);
       z-index: -1;
       border: 10px solid $c-green;
+
+      @include desktop {
+        display: none;
+      }
     }
 
     &::after {
@@ -181,4 +218,9 @@ p {
   &--green {
     color: $c-green;
   }
+}
+
+::selection {
+  background-color: $c-dark-grey;
+  color: #fff;
 }

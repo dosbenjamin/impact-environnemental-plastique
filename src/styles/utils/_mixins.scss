@@ -3,3 +3,9 @@
   display: block;
   position: absolute;
 }
+
+@mixin desktop {
+  @media (min-width: 768px) {
+    @content;
+  }
+}

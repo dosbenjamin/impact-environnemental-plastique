@@ -2,6 +2,10 @@
   @return $unit-value * $number;
 }
 
+@function rythm-units-desktop($number) {
+  @return $unit-value-desktop * $number;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -16,6 +20,12 @@ ul {
   position: relative;
   overflow: hidden;
   padding: rythm-units(2) rythm-units(1);
+  box-sizing: border-box;
+
+  @include desktop {
+    overflow: visible;
+    padding: rythm-units-desktop(5) rythm-units-desktop(1);
+  }
 
   &:not(.section--header)::before {
     @include pseudo;
@@ -47,6 +57,11 @@ ul {
   &--header {
     padding-top: rythm-units(3);
 
+    @include desktop {
+      padding: rythm-units-desktop(6) rythm-units-desktop(4);
+      overflow: visible;
+    }
+
     &::before {
       @include pseudo;
 
@@ -56,11 +71,27 @@ ul {
       height: 100%;
       width: 100%;
       z-index: -2;
+
+      @include desktop {
+        width: 140vw;
+        height: 170%;
+        left: 50%;
+        transform: translateX(-55%);
+        border-radius: 100%;
+        top: calc(-70% - 40px);
+        border: 20px solid $c-green;
+      }
     }
   }
 
   &--today {
     padding-bottom: 0;
+  }
+
+  @include desktop {
+    width: 80vw;
+    max-width: 1280px;
+    margin: 0 auto;
   }
 }
 

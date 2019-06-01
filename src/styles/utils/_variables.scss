@@ -7,8 +7,11 @@ $c-dark-grey: #383838;
 
 // Typography
 $text-size: 18px;
+$text-size-desktop: 20px;
 $leading: 1.45;
+$leading-desktop: 1.45;
 $unit-value: $text-size * $leading;
+$unit-value-desktop: $text-size-desktop * $leading-desktop;
 $ms: (
   _1: 0.75rem,
   0: 1rem,

@@ -20,4 +20,20 @@
       display: none;
     }
   }
+
+  &__container {
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: rythm-units-desktop(3);
+    }
+  }
+
+  @include desktop {
+    position: absolute;
+    top: rythm-units-desktop(1);
+    right: 0;
+  }
 }

@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="styles/app.css" />
     <script defer src="scripts/app.js"></script>
   </head>
-  <body>
+  <body class="noJS">
     <header class="section section--header">
       <nav class="menu">
         <button class="menu__button">Menu</button>
-        <ul style="display: none" class="menu__container">
-          <li><a href="#">Case study</a></li>
-          <li><a href="credits.html">Crédits</a></li>
-          <li><a href="a-propos.html">À propos</a></li>
+        <ul class="menu__container">
+          <li class="menu__item"><a class="link link--grey" href="#">Case study</a></li>
+          <li class="menu__item"><a class="link link--grey" href="credits.html">Crédits</a></li>
+          <li class="menu__item"><a class="link link--grey" href="a-propos.html">À propos</a></li>
         </ul>
       </nav>
       <h1 class="title title--headline">
@@ -222,11 +222,11 @@
           </li>
         </ul>
         <small class="tiny tiny--center">
-          Réalisé avec amour par <span class="lineBreak"></span>
-          <a class="link link--green" href="">Benjamin Dos Santos</a>
+          Réalisé avec par <span class="lineBreak"></span>
+          <a class="link link--green" href="https://benjamindossantos.be">Benjamin Dos Santos</a>
           <span class="lineBreak"></span> pour
-          <a aria-label="Section Design Web & Mobile" class="link link--green" href="www.dwm.re">DWM</a> |
-          <a aria-label="Haute École Albert Jacquard" class="link link--green" href="https://heaj.be">HEAJ</a>
+          <a class="link link--green link--tooltip link--dwm" href="http://dwm.re">DWM</a> |
+          <a class="link link--green link--tooltip link--heaj" href="https://heaj.be">HEAJ</a>
           &#169;
         </small>
       </div>

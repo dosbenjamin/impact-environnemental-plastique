@@ -1,3 +1,5 @@
+document.body.classList.remove('noJS')
+
 const datas = document.querySelectorAll('.data')
 const infoButton = document.querySelectorAll('.infos__button')
 

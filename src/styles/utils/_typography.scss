@@ -177,14 +177,18 @@ p {
   text-decoration: none;
   font-weight: 500;
 
-  &:focus {
-    outline: 2px solid $c-green-bright;
-    outline-offset: 6px;
-  }
-
   @include desktop {
     &:hover {
       color: $c-green-bright;
+    }
+
+    &:focus {
+      outline: 2px solid $c-green-bright;
+      outline-offset: 6px;
+
+      &:hover {
+        outline: 0;
+      }
     }
   }
 
@@ -194,6 +198,56 @@ p {
     @include desktop {
       &:hover {
         color: $c-middle-grey;
+      }
+    }
+  }
+
+  &--grey {
+    color: $c-dark-grey;
+
+    @include desktop {
+      &:focus {
+        outline-color: $c-dark-grey;
+      }
+
+      &:hover {
+        color: $c-light-grey;
+      }
+    }
+  }
+
+  &--tooltip {
+    position: relative;
+
+    &:hover,
+    &:focus {
+      &::after {
+        white-space: nowrap;
+        color: $c-dark-grey;
+        margin-top: rythm-units-desktop(1);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $c-green;
+        padding: rythm-units-desktop(0.5);
+      }
+    }
+  }
+
+  &--dwm {
+    &:hover,
+    &:focus {
+      &::after {
+        content: "Section Design Web & Mobile";
+      }
+    }
+  }
+
+  &--heaj {
+    &:hover,
+    &:focus {
+      &::after {
+        content: "Haute École Albert Jacquard";
       }
     }
   }

@@ -116,6 +116,18 @@
   &--reverse {
     animation-direction: alternate-reverse;
   }
+
+  + .tiny {
+    margin-top: rythm-units(1);
+  }
+
+  @include desktop {
+    + .tiny {
+      margin-top: rythm-units-desktop(1);
+      width: 60vmin;
+      max-width: initial;
+    }
+  }
 }
 
 // Production
@@ -123,10 +135,18 @@
 @include desktop {
   .data[data-stats="2050"] {
     margin-right: 0;
+
+    + .tiny {
+      margin-right: 0;
+    }
   }
 
   .data[data-stats="year"] {
     margin-left: 0;
+
+    + .tiny {
+      margin-left: 0;
+    }
   }
 }
 
@@ -134,7 +154,7 @@
 .data[data-stats="year"],
 .data[data-stats="yearBis"] {
   &::after {
-    content: "Cliquez sur les cercles pour afficher les informations";
+    // content: "Cliquez sur les cercles pour afficher les informations";
     position: absolute;
     justify-content: center;
     max-width: 12rem;

@@ -82,7 +82,7 @@ p {
 .tiny {
   font-size: map-get($ms, _1);
   max-width: 12rem;
-  line-height: 0.9;
+  line-height: 1.2;
   display: block;
 
   &--center {
@@ -164,6 +164,10 @@ p {
       width: rythm-units(0.5);
       background-color: $c-dark-grey;
       margin-top: rythm-units(0.25);
+    }
+
+    @include desktop {
+      margin-bottom: rythm-units-desktop(1);
     }
   }
 }

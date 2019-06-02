@@ -70,6 +70,7 @@
     width: 60vmin;
     height: 60vmin;
     margin: rythm-units-desktop(3) auto 0 auto;
+    cursor: pointer;
   }
 
   &:focus {
@@ -211,8 +212,10 @@
 }
 
 .infos {
+  position: relative;
+
   &__item {
-    background-color: $c-light-grey;
+    background-color: $c-green;
     padding: rythm-units(1);
     position: fixed;
     visibility: hidden;
@@ -222,8 +225,12 @@
     right: 0;
     z-index: 3;
 
-    &--white {
-      background-color: #fff;
+    @include desktop {
+      padding: rythm-units-desktop(1);
+      width: rythm-units-desktop(10);
+      bottom: rythm-units-desktop(2);
+      top: initial;
+      margin: 0 auto;
     }
 
     &--active {
@@ -255,5 +262,9 @@
     padding: 0;
     top: rythm-units(0.5);
     right: rythm-units(0.5);
+
+    @include desktop {
+      cursor: pointer;
+    }
   }
 }

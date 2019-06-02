@@ -1,48 +1,10 @@
-// // Montserrat Regular
-// @font-face {
-//   font-family: Montserrat;
-//   font-style: normal;
-//   font-weight: 400;
-//   font-display: swap;
-//   src:
-//     url("../assets/fonts/montserrat-v13-latin-regular.woff2") format("woff2"),
-//     url("../assets/fonts/montserrat-v13-latin-regular.woff") format("woff");
-// }
-
-// // Montserrat Medium
-// @font-face {
-//   font-family: Montserrat;
-//   font-style: normal;
-//   font-weight: 500;
-//   font-display: swap;
-//   src:
-//     url("../assets/fonts/montserrat-v13-latin-500.woff2") format("woff2"),
-//     url("../assets/fonts/montserrat-v13-latin-500.woff") format("woff");
-// }
-
-// // Montserrat Semi-Bold
-// @font-face {
-//   font-family: Montserrat;
-//   font-style: normal;
-//   font-weight: 600;
-//   font-display: swap;
-//   src:
-//     url("../assets/fonts/montserrat-v13-latin-600.woff2") format("woff2"),
-//     url("../assets/fonts/montserrat-v13-latin-600.woff") format("woff");
-// }
-
-// // Montserrat Bold
-// @font-face {
-//   font-family: Montserrat;
-//   font-style: normal;
-//   font-weight: 700;
-//   font-display: swap;
-//   src:
-//     url("../assets/fonts/montserrat-v13-latin-700.woff2") format("woff2"),
-//     url("../assets/fonts/montserrat-v13-latin-700.woff") format("woff");
-// }
-
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap");
+@font-face {
+  font-family: "Source Sans";
+  src:
+    url("../assets/fonts/SourceSansVariable-Roman.ttf.woff") format("woff"),
+    url("../assets/fonts/SourceSansVariable-Roman.ttf.woff2") format("woff2");
+  font-weight: 1 999;
+}
 
 html {
   font-size: $text-size;
@@ -53,7 +15,7 @@ html {
 }
 
 body {
-  font-family: Source Sans Pro, sans-serif;
+  font-family: Source Sans, sans-serif;
   line-height: $leading;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -74,7 +36,7 @@ p {
   max-width: 28rem;
 }
 
-.old-style {
+.oldStyle {
   font-variant-numeric: oldstyle-nums;
   -moz-font-feature-settings: "onum";
   -webkit-font-feature-settings: "onum";

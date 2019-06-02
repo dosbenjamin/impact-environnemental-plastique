@@ -74,6 +74,7 @@ p {
 
     @include desktop {
       margin-left: auto;
+      margin-right: rythm-units-desktop(4);
     }
   }
 }

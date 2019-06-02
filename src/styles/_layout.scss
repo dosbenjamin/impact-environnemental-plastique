@@ -66,9 +66,7 @@ ul {
     padding-top: rythm-units(3);
 
     @include desktop {
-      padding:
-        rythm-units-desktop(6) 0 rythm-units-desktop(6)
-        rythm-units-desktop(5);
+      padding: rythm-units-desktop(6) 0 rythm-units-desktop(6) rythm-units-desktop(5);
       overflow: visible;
     }
 
@@ -109,8 +107,27 @@ ul {
   }
 }
 
+.side {
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-top: rythm-units-desktop(3);
+    align-items: center;
+
+    p {
+      margin-top: rythm-units-desktop(8);
+    }
+  }
+}
+
 .circlePic {
   position: relative;
+
+  @include desktop {
+    // overflow-x: hidden;
+    // overflow-y: visible;
+  }
 
   &::before {
     @include pseudo;
@@ -124,7 +141,12 @@ ul {
     background-color: $c-green-bright;
 
     @include desktop {
-      display: none;
+      height: 65vmin;
+      width: 65vmin;
+      max-height: rythm-units-desktop(25);
+      max-width: rythm-units-desktop(25);
+      right: -10%;
+      top: -90%;
     }
   }
 }
@@ -134,11 +156,18 @@ ul {
   display: block;
   margin: rythm-units(2) 0 rythm-units(2) rythm-units(-1);
 
+  @include desktop {
+    margin: 0 0 0 auto;
+    height: rythm-units-desktop(22);
+  }
+
   &--right {
     margin: rythm-units(2) 0 rythm-units(2) rythm-units(1);
 
     @include desktop {
-      height: 500px;
+      width: 100%;
+      object-fit: cover;
+      height: rythm-units-desktop(20);
       margin: rythm-units-desktop(3) 0 rythm-units-desktop(3) 0;
     }
   }

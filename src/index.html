@@ -19,11 +19,11 @@
       </nav>
       <h1 class="title title--headline">
         Impact environnemental<span class="lineBreak"></span> du cicle de vie
-        <span class="lineBreak lineBreak--notDesktop"></span> des plastiques
+        <span class="lineBreak lineBreak--notDesktop"></span>des plastiques
       </h1>
       <p class="bigText">
         Des emballages aux automobiles en passant par l'électronique, le plastique a révolutionné la vie de l'homme.
-        Depuis plus <span class="oldStyle">50</span> ans, il fait couramment parti de notre quotidien et est présent
+        Depuis plus de <span class="oldStyle">50</span> ans, il fait couramment parti de notre quotidien et est présent
         dans la quasi totalité des secteurs.
       </p>
     </header>
@@ -94,15 +94,17 @@
         <p class="bigText bigText--right">
           L'un des principales cause de la pollution plastique est l'utilisation de plastique à usage unique.
         </p>
-        <div class="circlePic">
-          <img class="pic" src="assets/images/sacs-plastiques.jpg" alt="Sacs en plastiques" />
+        <div class="side">
+          <div class="circlePic">
+            <img class="pic" src="assets/images/sacs-plastiques.jpg" alt="Sacs en plastiques" />
+          </div>
+          <p>
+            Bouteilles en plastique, sacs plastique, emballages alimentaires, pailles, etc. Tout ces objets font
+            maintenant partis de notre quotidien et sont tellement devenu une habitude qu'il est difficile de s'en
+            séparer. On les utilise tous les jours et on oublie souvent où ils vont finir leur vie&hellip;
+          </p>
         </div>
-        <p>
-          Bouteilles en plastique, sacs plastique, emballages alimentaires, pailles, etc. Tout ces objets font
-          maintenant partis de notre quotidien et sont tellement devenu une habitude qu'il est difficile de s'en
-          séparer. On les utilise tous les jours et on oublie souvent où ils vont finir leur vie&hellip;
-        </p>
-        <div tabindex="0" class="data" data-stats="year">
+        <div role="application" tabindex="0" class="data" data-stats="year">
           <div tabindex="0" class="data data--green data--animate data--reverse" data-stats="unique">
             <div tabindex="0" class="data data--middleGrey data--animate" data-stats="packaging"></div>
           </div>
@@ -135,14 +137,14 @@
         </ul>
       </section>
       <section class="section" id="lastSection">
-        <h2 class="title">Fin<span class="lineBreak"></span> de vie</h2>
+        <h2 class="title">Fin<span aria-hidden="true" class="lineBreak"></span> de vie</h2>
         <p>
           Le plastique est un matériau qui ne se dégrade jamais, sur une période allant de
           <span class="oldStyle">50</span> à <span class="oldStyle">600</span> ans, il devient de plus en plus petit et
           fini par être ingéré par les animaux et contamine les eaux.
         </p>
         <img class="pic pic--right" src="assets/images/plastique-animaux.jpg" alt="" />
-        <div tabindex="0" class="data data--middleGrey" data-stats="yearBis">
+        <div role="application" tabindex="0" class="data data--middleGrey" data-stats="yearBis">
           <div tabindex="0" class="data data--green data--animate data--animateAlt" data-stats="waste">
             <div tabindex="0" class="data data--animate data--reverse data--animateAlt" data-stats="recycled"></div>
             <div tabindex="0" class="data data--animate data--animateAlt" data-stats="nature">
@@ -196,20 +198,19 @@
     </main>
     <footer class="footer">
       <div class="counter">
-        <p class="counter__pre">Depuis votre arrivé sur cette page&hellip;</p>
         <strong class="counter__count">
           <span class="counter__circle">
             <span class="counter__number">
-              <span class="counter__item counter__item--first">0</span>
+              <span aria-hidden="true" class="counter__item counter__item--first">0</span>
               <span class="counter__item counter__item--second">0</span>
             </span>
             kilos
           </span>
-          <span class="counter__post">de déchets plastiques ont été produits</span>
+          <span class="counter__post">de déchets plastiques ont été produits depuis votre arrivé sur cette page</span>
         </strong>
       </div>
       <div class="section section--darkGrey">
-        <ul class="footerMenu">
+        <ul class="footerMenu" role="navigation">
           <li class="footerMenu__item">
             <a class="link" href="case-study.html">Case study</a>
           </li>
@@ -221,10 +222,12 @@
           </li>
         </ul>
         <small class="tiny tiny--center">
-          Réalisé avec &hearts; par <span class="lineBreak"></span>
+          Réalisé avec amour par <span class="lineBreak"></span>
           <a class="link link--green" href="">Benjamin Dos Santos</a>
-          <span class="lineBreak"></span> pour <a class="link link--green" href="www.dwm.re">DWM</a> |
-          <a class="link link--green" href="https://heaj.be">HEAJ</a> &#169;
+          <span class="lineBreak"></span> pour
+          <a aria-label="Section Design Web & Mobile" class="link link--green" href="www.dwm.re">DWM</a> |
+          <a aria-label="Haute École Albert Jacquard" class="link link--green" href="https://heaj.be">HEAJ</a>
+          &#169;
         </small>
       </div>
     </footer>

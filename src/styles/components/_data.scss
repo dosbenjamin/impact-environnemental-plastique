@@ -119,8 +119,14 @@
 
 // Production
 
-.data[data-stats="2050"] {
-  margin-right: 0;
+@include desktop {
+  .data[data-stats="2050"] {
+    margin-right: 0;
+  }
+
+  .data[data-stats="year"] {
+    margin-left: 0;
+  }
 }
 
 .data[data-stats="2050"],

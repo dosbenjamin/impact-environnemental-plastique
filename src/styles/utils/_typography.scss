@@ -53,8 +53,10 @@ p {
 .lineBreak {
   display: block;
 
-  &--notDesktop {
-    display: initial;
+  @include desktop {
+    &--notDesktop {
+      display: initial;
+    }
   }
 }
 
@@ -93,10 +95,10 @@ p {
 }
 
 .title {
-  font-size: map-get($ms, 3);
+  font-size: map-get($ms, 4);
   line-height: 0.95;
   font-weight: 700;
-  margin: 0 0 rythm-units(1) 0;
+  margin: 0 0 rythm-units(2) 0;
 
   @include desktop {
     font-size: map-get($ms, 4);
@@ -107,7 +109,7 @@ p {
     content: "";
     display: block;
     margin-top: rythm-units(0.5);
-    height: 6px;
+    height: 7px;
     width: rythm-units(1);
     background-color: $c-green-bright;
 
@@ -119,11 +121,10 @@ p {
 
   &--headline {
     line-height: 1.1;
-    margin: 0;
+    margin: 0 0 rythm-units(2) 0;
     font-size: 9.5vw;
     position: relative;
     padding-bottom: rythm-units(3);
-    margin-bottom: rythm-units(2);
 
     @include desktop {
       font-size: map-get($ms, 4);
@@ -159,15 +160,15 @@ p {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 
+    @include desktop {
+      margin-bottom: rythm-units-desktop(1);
+    }
+
     &::after {
       height: 2px;
       width: rythm-units(0.5);
       background-color: $c-dark-grey;
       margin-top: rythm-units(0.25);
-    }
-
-    @include desktop {
-      margin-bottom: rythm-units-desktop(1);
     }
   }
 }

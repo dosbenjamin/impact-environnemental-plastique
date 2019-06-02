@@ -1,15 +1,29 @@
 document.body.classList.remove('noJS')
 
+const burgerMenu = document.querySelector('.menu__button')
+burgerMenu.addEventListener('click', () => {
+  document.body.classList.toggle('menuOpen')
+})
+
 const datas = document.querySelectorAll('.data')
 const infoButton = document.querySelectorAll('.infos__button')
 
 datas.forEach(data => {
-  data.addEventListener('focus', e => {
+  data.addEventListener('click', e => {
     const stat = e.target.getAttribute('data-stats')
     const active = document.querySelector('.infos__item--active')
     active != null && active.classList.remove('infos__item--active')
     const toDisplay = document.querySelector(`.infos__item[data-info="${stat}"]`)
     toDisplay.classList.add('infos__item--active')
+  })
+  data.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      const stat = e.target.getAttribute('data-stats')
+      const active = document.querySelector('.infos__item--active')
+      active != null && active.classList.remove('infos__item--active')
+      const toDisplay = document.querySelector(`.infos__item[data-info="${stat}"]`)
+      toDisplay.classList.add('infos__item--active')
+    }
   })
 })
 
@@ -21,7 +35,9 @@ document.addEventListener('focusin', e => {
 
 document.addEventListener('focusout', () => {
   const active = document.querySelector('.infos__item--active')
-  active != null && active.classList.remove('infos__item--active')
+  setTimeout(() => {
+    active != null && active.classList.remove('infos__item--active')
+  }, 100)
 })
 
 infoButton.forEach(button => {
@@ -30,20 +46,23 @@ infoButton.forEach(button => {
   })
 })
 
-// const dataOne = document.querySelector('.data[data-stats="2050"')
-// const dataTwo = document.querySelector('.data[data-stats="year"')
-// const dataThree = document.querySelector('.data[data-stats="yearBis"')
+const dataOne = document.querySelector('.data[data-stats="2050"')
+const dataTwo = document.querySelector('.data[data-stats="year"')
+const dataThree = document.querySelector('.data[data-stats="yearBis"')
 
 // window.addEventListener('scroll', () => {
 //   const active = document.querySelector('.infos__item--active')
 //   const activeHeight = active.getBoundingClientRect().height
-//   console.log(activeHeight)
-//   if (dataOne.getBoundingClientRect().top <= activeHeight) {
+//   if (dataOne.getBoundingClientRect().top <= activeHeight && dataOne.getBoundingClientRect().top > 0) {
 //     active != null && active.classList.remove('infos__item--active')
-//     // console.log(data.getBoundingClientRect())
+//   } else if (dataTwo.getBoundingClientRect().top <= activeHeight && dataTwo.getBoundingClientRect().top > 0) {
+//     active != null && active.classList.remove('infos__item--active')
+//   } else if (dataThree.getBoundingClientRect().top <= activeHeight && dataThree.getBoundingClientRect().top > 0) {
+//     active != null && active.classList.remove('infos__item--active')
 //   }
 // })
 
+// Counter
 let counter = 0
 let nextCounter = 0.25
 setInterval(() => {
@@ -53,32 +72,35 @@ setInterval(() => {
   nextCounter += 0.25
   firstChild.classList.add('counter__item--translate')
   lastChild.classList.add('counter__item--translate')
-
-  firstChild.textContent = counter
-  lastChild.textContent = nextCounter
-
-  setTimeout(() => {
+  lastChild.addEventListener('animationend', () => {
     firstChild.before(lastChild)
     firstChild.classList.remove('counter__item--translate')
     lastChild.classList.remove('counter__item--translate')
-  }, 300)
+  })
+  setTimeout(() => {
+    firstChild.textContent = counter
+    lastChild.textContent = nextCounter
+  }, 1000)
 }, 5000)
 
 // const footer = document.querySelector('.footer')
 // const lastSection = document.querySelector('#lastSection')
 // let scrollValue = 0
+// let previousScroll = 0
 
 // window.addEventListener('scroll', () => {
-//   const sectionHeight = lastSection.getBoundingClientRect().height
-//   const windowHeight = window.innerHeight
-//   console.log(window.scrollY)
-//   console.log(lastSection.getBoundingClientRect())
+//   const breakpoint =
+//     lastSection.getBoundingClientRect().top + lastSection.getBoundingClientRect().height - window.innerHeight
+//   const currentScroll = window.pageYOffset
 
-//   if (
-//     lastSection.getBoundingClientRect().top <=
-//     windowHeight - sectionHeight + 20
-//   ) {
-//     scrollValue -= 2
-//     footer.style.marginTop = `${scrollValue}px`
+//   if (previousScroll - currentScroll > 0 && breakpoint <= 3) {
+//     scrollValue += 4
+//   } else {
+//     scrollValue -= 4
 //   }
+
+//   breakpoint < 20 ? (footer.style.marginTop = `${scrollValue}px`) : (scrollValue = 0)
+//   previousScroll = currentScroll
+
+//   console.log(scrollValue)
 // })

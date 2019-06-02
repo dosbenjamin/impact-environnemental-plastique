@@ -6,10 +6,6 @@
   @return $unit-value-desktop * $number;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 ul {
   margin: 0;
   padding: 0;
@@ -19,17 +15,20 @@ ul {
 .section {
   position: relative;
   overflow: hidden;
-  padding: rythm-units(2) rythm-units(1);
-  box-sizing: border-box;
+  padding: rythm-units(3) rythm-units(1);
 
   @include desktop {
+    width: 80vw;
+    max-width: 1280px;
+    margin: 0 auto;
     overflow: visible;
     padding: rythm-units-desktop(5) rythm-units-desktop(1);
   }
 
-  &:not(.section--header)::before {
+  &--bg::before {
     @include pseudo;
 
+    background-color: $c-light-grey;
     height: 100%;
     width: 100vw;
     z-index: -1;
@@ -38,32 +37,8 @@ ul {
     transform: translateX(-50%);
   }
 
-  &--grey {
-    &::before {
-      background-color: $c-light-grey;
-    }
-  }
-
-  &--darkGrey {
-    color: #fff;
-    padding-top: rythm-units(3);
-    padding-bottom: rythm-units(3);
-
-    &::before {
-      background-color: $c-dark-grey;
-    }
-
-    @include desktop {
-      padding-top: rythm-units-desktop(4);
-      padding-bottom: rythm-units-desktop(4);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-  }
-
   &--header {
-    padding-top: rythm-units(3);
+    padding-bottom: rythm-units(2);
 
     @include desktop {
       padding: rythm-units-desktop(6) 0 rythm-units-desktop(6) rythm-units-desktop(5);
@@ -71,14 +46,7 @@ ul {
     }
 
     &::before {
-      @include pseudo;
-
       background-color: $c-green-bright;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      z-index: -2;
 
       @include desktop {
         width: 140vw;
@@ -92,18 +60,29 @@ ul {
     }
   }
 
+  &--darkGrey {
+    color: #fff;
+
+    @include desktop {
+      padding-top: rythm-units-desktop(4);
+      padding-bottom: rythm-units-desktop(4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &::before {
+      background-color: $c-dark-grey;
+    }
+  }
+
   &--today {
+    padding-top: rythm-units(2);
     padding-bottom: 0;
 
     @include desktop {
       overflow: initial;
     }
-  }
-
-  @include desktop {
-    width: 80vw;
-    max-width: 1280px;
-    margin: 0 auto;
   }
 }
 
@@ -117,42 +96,47 @@ ul {
 
     p {
       margin-top: rythm-units-desktop(8);
+      margin-right: rythm-units-desktop(2);
     }
   }
 }
 
-.circlePic {
-  position: relative;
+.greenCircle {
+  height: 100%;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 
   @include desktop {
-    // overflow-x: hidden;
-    // overflow-y: visible;
+    top: rythm-units-desktop(-1);
   }
 
   &::before {
     @include pseudo;
 
+    bottom: -25vw;
+    left: -50vw;
     border-radius: 100%;
-    top: -45%;
-    right: -35%;
-    height: 100vw;
-    width: 100vw;
-    z-index: -1;
-    background-color: $c-green-bright;
+    // top: -45%;
+    // right: -35%;
+    height: 120vw;
+    width: 120vw;
+    background-color: $c-green;
 
     @include desktop {
-      height: 65vmin;
-      width: 65vmin;
-      max-height: rythm-units-desktop(25);
-      max-width: rythm-units-desktop(25);
-      right: -10%;
-      top: -90%;
+      max-height: rythm-units-desktop(45);
+      max-width: rythm-units-desktop(45);
+      height: 66vmax;
+      width: 66vmax;
+      right: -17vmax;
+      top: -12vmax;
     }
   }
 }
 
 .pic {
-  position: relative;
   display: block;
   margin: rythm-units(2) 0 rythm-units(2) rythm-units(-1);
 
@@ -161,7 +145,8 @@ ul {
     height: rythm-units-desktop(22);
   }
 
-  &--right {
+  &--animal {
+    width: 100%;
     margin: rythm-units(2) 0 rythm-units(2) rythm-units(1);
 
     @include desktop {

@@ -64,7 +64,6 @@
   }
 
   &__number {
-    display: block;
     font-size: map-get($ms, 6);
     height: map-get($ms, 6);
     overflow: hidden;
@@ -75,21 +74,25 @@
     display: block;
     position: relative;
     top: -100%;
-    transition: transform 250ms;
 
     &--translate {
-      transform: translateY(100%);
+      animation-name: counter;
+      animation-duration: 250ms;
+      // transform: translateY(100%);
     }
   }
 
   &__post {
+    font-size: map-get($ms, _1);
     text-transform: uppercase;
-    max-width: 12rem;
+    max-width: 15rem;
     display: inline-block;
     line-height: 1.12;
+  }
+}
 
-    @include desktop {
-      max-width: 20rem;
-    }
+@keyframes counter {
+  to {
+    transform: translateY(100%);
   }
 }

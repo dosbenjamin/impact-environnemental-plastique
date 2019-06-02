@@ -2,13 +2,6 @@ const datas = document.querySelectorAll('.data')
 const infoButton = document.querySelectorAll('.infos__button')
 
 datas.forEach(data => {
-  // data.addEventListener('click', e => {
-  //   const stat = e.target.getAttribute('data-stats')
-  //   const active = document.querySelector('.infos__item--active')
-  //   active != null && active.classList.remove('infos__item--active')
-  //   const toDisplay = document.querySelector(`.infos__item[data-info="${stat}"]`)
-  //   toDisplay.classList.add('infos__item--active')
-  // })
   data.addEventListener('focus', e => {
     const stat = e.target.getAttribute('data-stats')
     const active = document.querySelector('.infos__item--active')
@@ -16,6 +9,17 @@ datas.forEach(data => {
     const toDisplay = document.querySelector(`.infos__item[data-info="${stat}"]`)
     toDisplay.classList.add('infos__item--active')
   })
+})
+
+document.addEventListener('focusin', e => {
+  const isData = e.target.classList[0]
+  const active = document.querySelector('.infos__item--active')
+  isData !== 'data' && active != null && active.classList.remove('infos__item--active')
+})
+
+document.addEventListener('focusout', () => {
+  const active = document.querySelector('.infos__item--active')
+  active != null && active.classList.remove('infos__item--active')
 })
 
 infoButton.forEach(button => {

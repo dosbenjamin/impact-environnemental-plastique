@@ -46,6 +46,11 @@
 
     @include desktop {
       flex-direction: row;
+      position: initial;
+      height: initial;
+      width: initial;
+      transform: initial;
+      overflow: initial;
     }
 
     &::before {
@@ -59,6 +64,10 @@
       background-color: #fff;
       border: 10px solid $c-green;
       z-index: -1;
+
+      @include desktop {
+        display: none;
+      }
     }
   }
 
@@ -67,10 +76,15 @@
     text-align: center;
     font-size: map-get($ms, 2);
 
+    @include desktop {
+      font-size: map-get($ms, 0);
+    }
+
     &:not(:last-child) {
       margin-bottom: rythm-units(1);
 
       @include desktop {
+        margin-bottom: 0;
         margin-right: rythm-units-desktop(3);
       }
     }

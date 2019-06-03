@@ -5,7 +5,6 @@
   @include desktop {
     margin: rythm-units-desktop(4) 0 0 0;
     width: 100%;
-    position: relative;
   }
 
   &__image {
@@ -28,12 +27,8 @@
     position: relative;
 
     @include desktop {
-      margin-top: rythm-units-desktop(-1);
-      left: 0;
-      // overflow: visible;
-      position: initial;
-      width: 100%;
-      box-shadow: none;
+      padding: rythm-units-desktop(2) rythm-units-desktop(2) rythm-units-desktop(3) rythm-units-desktop(2);
+      top: rythm-units-desktop(-1);
     }
 
     &::before {
@@ -49,9 +44,7 @@
       @include desktop {
         width: 100vw;
         left: 50%;
-        top: 0;
         bottom: 0;
-        height: calc(100% - 435px);
         margin-top: auto;
         transform: translateX(-50%);
       }
@@ -60,15 +53,12 @@
 
   &__content {
     margin-bottom: rythm-units(1);
-    position: relative;
-    z-index: 1;
 
     @include desktop {
       text-align: center;
       margin: 0 auto;
       padding: rythm-units-desktop(2) 0;
       max-width: 37rem;
-      box-sizing: border-box;
     }
 
     &::before {
@@ -83,13 +73,10 @@
 
   &__author {
     font-style: normal;
-    position: relative;
     line-height: 1.275;
     display: block;
-    z-index: 1;
 
     @include desktop {
-      margin: 0 auto;
       text-align: center;
     }
   }
@@ -98,7 +85,7 @@
     margin-left: 23px;
 
     @include desktop {
-      text-indent: 0;
+      margin-left: 0;
     }
   }
 }

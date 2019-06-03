@@ -12,6 +12,12 @@ ul {
   list-style: none;
 }
 
+body {
+  @include desktop {
+    overflow-x: hidden;
+  }
+}
+
 .section {
   position: relative;
   overflow: hidden;
@@ -42,19 +48,19 @@ ul {
 
     @include desktop {
       padding: rythm-units-desktop(6) 0 rythm-units-desktop(6) rythm-units-desktop(5);
-      overflow: visible;
     }
 
     &::before {
       background-color: $c-green-bright;
 
       @include desktop {
-        width: 140vw;
-        height: 170%;
+        width: 340vw;
+        height: 340vw;
         left: 50%;
-        transform: translateX(-55%);
+        transform: translateX(-52%);
         border-radius: 100%;
-        top: calc(-70% - 40px);
+        top: initial;
+        bottom: 0;
         border: 20px solid $c-green;
       }
     }
@@ -67,7 +73,6 @@ ul {
       padding-top: rythm-units-desktop(4);
       padding-bottom: rythm-units-desktop(4);
       display: flex;
-      align-items: center;
       justify-content: space-between;
     }
 
@@ -81,7 +86,13 @@ ul {
     padding-bottom: 0;
 
     @include desktop {
-      overflow: initial;
+      padding-top: rythm-units-desktop(4);
+    }
+  }
+
+  &--use {
+    @include desktop {
+      padding-bottom: rythm-units-desktop(6);
     }
   }
 }
@@ -111,33 +122,50 @@ ul {
   z-index: -1;
 
   @include desktop {
-    top: rythm-units-desktop(-1);
+    bottom: 0;
+    overflow: hidden;
   }
 
   &::before {
     @include pseudo;
 
-    bottom: -25vw;
-    left: -50vw;
+    bottom: -25vmin;
+    left: -50vmin;
     border-radius: 100%;
-    height: 120vw;
-    width: 120vw;
+    height: 120vmin;
+    width: 120vmin;
     background-color: $c-green;
-  }
-
-  &--last::before {
-    top: 38vmin;
-    right: -45vmin;
-    left: initial;
-    bottom: initial;
 
     @include desktop {
-      max-height: rythm-units-desktop(45);
-      max-width: rythm-units-desktop(45);
-      height: 66vmax;
-      width: 66vmax;
-      right: -17vmax;
-      top: -12vmax;
+      max-height: rythm-units-desktop(40);
+      max-width: rythm-units-desktop(40);
+      height: 47vmax;
+      width: 47vmax;
+      left: -15vmax;
+      bottom: -10vmax;
+    }
+  }
+
+  &--last {
+    @include desktop {
+      bottom: initial;
+      top: rythm-units-desktop(-1);
+    }
+
+    &::before {
+      top: 38vmin;
+      right: -45vmin;
+      left: initial;
+      bottom: initial;
+
+      @include desktop {
+        max-height: rythm-units-desktop(45);
+        max-width: rythm-units-desktop(45);
+        height: 57vmax;
+        width: 57vmax;
+        right: -10vmax;
+        top: -10vmax;
+      }
     }
   }
 }
@@ -170,6 +198,12 @@ ul {
 }
 
 .footerMenu {
+  margin-bottom: rythm-units(2);
+
+  @include desktop {
+    margin-bottom: 0;
+  }
+
   &__item {
     text-align: center;
 
@@ -179,13 +213,9 @@ ul {
 
     &:not(:last-child) {
       margin-bottom: rythm-units(1);
-    }
-
-    &:last-child {
-      margin-bottom: rythm-units(2);
 
       @include desktop {
-        margin-bottom: 0;
+        margin-bottom: rythm-units-desktop(1);
       }
     }
   }

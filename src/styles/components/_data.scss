@@ -60,8 +60,8 @@
 
 .data {
   border-radius: 100%;
-  width: 80vw;
-  height: 80vw;
+  width: 80vmin;
+  height: 80vmin;
   background-color: $c-dark-grey;
   position: relative;
   margin: rythm-units(2) auto 0 auto;
@@ -223,7 +223,7 @@
     @include desktop {
       padding: rythm-units-desktop(1);
       width: rythm-units-desktop(10);
-      bottom: rythm-units-desktop(2);
+      bottom: rythm-units-desktop(3);
       top: initial;
       margin: 0 auto;
     }
@@ -258,6 +258,8 @@
     right: 0;
 
     @include desktop {
+      width: rythm-units-desktop(2);
+      height: rythm-units-desktop(2);
       cursor: pointer;
     }
   }

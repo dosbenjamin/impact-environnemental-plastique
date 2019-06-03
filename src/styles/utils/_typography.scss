@@ -126,28 +126,29 @@ p {
 
   &--headline {
     line-height: 1.1;
-    margin: 0 0 rythm-units(2) 0;
+    margin: rythm-units(-3) 0 rythm-units(2) 0;
     font-size: 9.5vw;
     position: relative;
     padding-bottom: rythm-units(3);
+    padding-top: rythm-units(3);
 
     @include desktop {
       font-size: map-get($ms, 4);
       padding: 0;
+      margin: 0 0 rythm-units-desktop(2) 0;
     }
 
     &::before {
       @include pseudo;
 
-      border-radius: 100%;
-      height: 200vw;
-      width: 200vw;
+      height: 100%;
+      width: 100vw;
       background-color: #fff;
-      bottom: 0;
-      left: 40%;
+      top: 0;
+      left: 50%;
       transform: translateX(-50%);
       z-index: -1;
-      border: 10px solid $c-green;
+      border-bottom: 10px solid $c-green;
 
       @include desktop {
         display: none;

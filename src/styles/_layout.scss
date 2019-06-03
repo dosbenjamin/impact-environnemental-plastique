@@ -54,11 +54,10 @@ body {
       background-color: $c-green-bright;
 
       @include desktop {
-        width: 340vw;
-        height: 340vw;
+        width: 100vw;
+        height: 100%;
         left: 50%;
-        transform: translateX(-52%);
-        border-radius: 100%;
+        transform: translateX(-50%);
         top: initial;
         bottom: 0;
         border: 20px solid $c-green;
@@ -89,12 +88,6 @@ body {
       padding-top: rythm-units-desktop(4);
     }
   }
-
-  &--use {
-    @include desktop {
-      padding-bottom: rythm-units-desktop(6);
-    }
-  }
 }
 
 .side {
@@ -106,66 +99,8 @@ body {
     align-items: center;
 
     p {
-      margin-top: rythm-units-desktop(8);
+      margin-top: rythm-units-desktop(5);
       margin-right: rythm-units-desktop(2);
-    }
-  }
-}
-
-.greenCircle {
-  height: 100%;
-  position: absolute;
-  width: 100vw;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -1;
-
-  @include desktop {
-    bottom: 0;
-    overflow: hidden;
-  }
-
-  &::before {
-    @include pseudo;
-
-    bottom: -25vmin;
-    left: -50vmin;
-    border-radius: 100%;
-    height: 120vmin;
-    width: 120vmin;
-    background-color: $c-green;
-
-    @include desktop {
-      max-height: rythm-units-desktop(40);
-      max-width: rythm-units-desktop(40);
-      height: 47vmax;
-      width: 47vmax;
-      left: -15vmax;
-      bottom: -10vmax;
-    }
-  }
-
-  &--last {
-    @include desktop {
-      bottom: initial;
-      top: rythm-units-desktop(-1);
-    }
-
-    &::before {
-      top: 38vmin;
-      right: -45vmin;
-      left: initial;
-      bottom: initial;
-
-      @include desktop {
-        max-height: rythm-units-desktop(45);
-        max-width: rythm-units-desktop(45);
-        height: 57vmax;
-        width: 57vmax;
-        right: -10vmax;
-        top: -10vmax;
-      }
     }
   }
 }
@@ -173,6 +108,7 @@ body {
 .pic {
   display: block;
   margin: rythm-units(2) 0 rythm-units(2) rythm-units(-1);
+  object-fit: cover;
 
   @include desktop {
     margin: 0 0 0 auto;
@@ -181,13 +117,11 @@ body {
 
   &--animal {
     width: 100%;
-    margin: rythm-units(2) 0 rythm-units(2) rythm-units(1);
+    margin: rythm-units(2) 0 rythm-units(0) rythm-units(1);
 
     @include desktop {
-      width: 100%;
-      object-fit: cover;
       height: rythm-units-desktop(20);
-      margin: rythm-units-desktop(3) 0 rythm-units-desktop(3) 0;
+      margin: rythm-units-desktop(3) 0 0 0;
     }
   }
 }

@@ -22,13 +22,13 @@
   &__block {
     font-size: map-get($ms, 1);
     font-weight: 600;
-    padding: rythm-units(2) rythm-units(2) rythm-units(3) rythm-units(2);
+    padding: rythm-units(2) rythm-units(1.5) rythm-units(2) rythm-units(2);
     margin: 0;
     position: relative;
 
     @include desktop {
-      padding: rythm-units-desktop(2) rythm-units-desktop(2) rythm-units-desktop(3) rythm-units-desktop(2);
-      top: rythm-units-desktop(-1);
+      padding: rythm-units-desktop(3) rythm-units-desktop(2) rythm-units-desktop(3) rythm-units-desktop(2);
+      margin-top: rythm-units-desktop(-1);
     }
 
     &::before {
@@ -37,7 +37,7 @@
       height: 100%;
       width: 100%;
       background-color: $c-light-grey;
-      top: rythm-units(-1);
+      top: 0;
       left: 0;
       z-index: -1;
 

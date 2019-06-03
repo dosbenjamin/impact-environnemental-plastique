@@ -2,6 +2,10 @@
   margin: rythm-units(2) 0 0 0;
   width: calc(100vw - 26.1px);
 
+  @include tablet {
+    width: calc(100vw - 78.3px);
+  }
+
   @include desktop {
     margin: rythm-units-desktop(4) 0 0 0;
     width: 100%;
@@ -14,6 +18,10 @@
     object-position: right;
     display: block;
 
+    @include tablet {
+      height: rythm-units(16);
+    }
+
     @include desktop {
       height: rythm-units-desktop(16);
     }
@@ -25,6 +33,10 @@
     padding: rythm-units(2) rythm-units(1.5) rythm-units(2) rythm-units(2);
     margin: 0;
     position: relative;
+
+    @include tablet {
+      padding: rythm-units(3) rythm-units(2.5) rythm-units(3) rythm-units(3);
+    }
 
     @include desktop {
       padding: rythm-units-desktop(3) rythm-units-desktop(2) rythm-units-desktop(3) rythm-units-desktop(2);
@@ -53,6 +65,10 @@
 
   &__content {
     margin-bottom: rythm-units(1);
+
+    @include tablet {
+      max-width: 25rem;
+    }
 
     @include desktop {
       text-align: center;

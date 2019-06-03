@@ -23,6 +23,10 @@ body {
   overflow: hidden;
   padding: rythm-units(3) rythm-units(1);
 
+  @include tablet {
+    padding: rythm-units(4) rythm-units(3);
+  }
+
   @include desktop {
     width: 80vw;
     max-width: 1280px;
@@ -44,23 +48,26 @@ body {
   }
 
   &--header {
-    padding-bottom: rythm-units(2);
-
     @include desktop {
+      padding: rythm-units-desktop(6) 0;
+    }
+
+    @include desktopXL {
       padding: rythm-units-desktop(6) 0 rythm-units-desktop(6) rythm-units-desktop(5);
     }
 
     &::before {
       background-color: $c-green-bright;
+      width: 100vw;
+      height: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      top: initial;
+      bottom: 0;
+      border-bottom: 10px solid $c-green;
 
       @include desktop {
-        width: 100vw;
-        height: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        top: initial;
-        bottom: 0;
-        border: 20px solid $c-green;
+        border-bottom: 20px solid $c-green;
       }
     }
   }
@@ -115,13 +122,34 @@ body {
     height: rythm-units-desktop(22);
   }
 
+  &--bags {
+    width: 80%;
+
+    @include tablet {
+      width: 60%;
+      margin-left: rythm-units(-3);
+    }
+
+    @include desktop {
+      width: 45%;
+      height: 100%;
+      margin-left: 0;
+    }
+  }
+
   &--animal {
     width: 100%;
     margin: rythm-units(2) 0 rythm-units(0) rythm-units(1);
 
+    @include tablet {
+      height: rythm-units(14);
+      margin: rythm-units(2) auto 0 auto;
+    }
+
     @include desktop {
       height: rythm-units-desktop(20);
       margin: rythm-units-desktop(3) 0 0 0;
+      object-position: 50% 60%;
     }
   }
 }

@@ -50,9 +50,9 @@ p {
 
   &--right {
     text-align: right;
+    margin-left: auto;
 
     @include desktop {
-      margin-left: auto;
       margin-right: rythm-units-desktop(4);
     }
   }
@@ -126,33 +126,16 @@ p {
 
   &--headline {
     line-height: 1.1;
-    margin: rythm-units(-3) 0 rythm-units(2) 0;
+    margin: 0 0 rythm-units(2) 0;
     font-size: 9.5vw;
-    position: relative;
-    padding-bottom: rythm-units(3);
-    padding-top: rythm-units(3);
+
+    @include tablet {
+      font-size: 7.5vw;
+    }
 
     @include desktop {
       font-size: map-get($ms, 4);
-      padding: 0;
       margin: 0 0 rythm-units-desktop(2) 0;
-    }
-
-    &::before {
-      @include pseudo;
-
-      height: 100%;
-      width: 100vw;
-      background-color: #fff;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: -1;
-      border-bottom: 10px solid $c-green;
-
-      @include desktop {
-        display: none;
-      }
     }
 
     &::after {

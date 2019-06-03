@@ -66,6 +66,11 @@
   position: relative;
   margin: rythm-units(2) auto 0 auto;
 
+  @include tablet {
+    width: 65vmin;
+    height: 65vmin;
+  }
+
   @include desktop {
     width: 60vmin;
     height: 60vmin;
@@ -220,12 +225,17 @@
     right: 0;
     z-index: 3;
 
+    @include tablet {
+      margin: 0 auto;
+      top: initial;
+      bottom: rythm-units(1);
+      width: rythm-units(10);
+    }
+
     @include desktop {
       padding: rythm-units-desktop(1);
       width: rythm-units-desktop(10);
       bottom: rythm-units-desktop(3);
-      top: initial;
-      margin: 0 auto;
     }
 
     &--active {

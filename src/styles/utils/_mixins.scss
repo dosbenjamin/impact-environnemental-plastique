@@ -3,8 +3,20 @@
   position: absolute;
 }
 
+@mixin tablet {
+  @media (min-width: 500px) {
+    @content;
+  }
+}
+
 @mixin desktop {
-  @media (min-width: 768px) {
+  @media (min-width: 960px) {
+    @content;
+  }
+}
+
+@mixin desktopXL {
+  @media (min-width: 1280px) {
     @content;
   }
 }

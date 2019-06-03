@@ -54,9 +54,6 @@
 
       @include desktop {
         border: 20px solid $c-green;
-      }
-
-      @include desktop {
         height: 50vmin;
         width: 50vmin;
       }
@@ -78,7 +75,6 @@
     &--translate {
       animation-name: counter;
       animation-duration: 250ms;
-      // transform: translateY(100%);
     }
   }
 

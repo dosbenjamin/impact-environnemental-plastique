@@ -4,6 +4,8 @@
     url("../assets/fonts/SourceSansVariable-Roman.ttf.woff") format("woff"),
     url("../assets/fonts/SourceSansVariable-Roman.ttf.woff2") format("woff2");
   font-weight: 1 999;
+  font-style: normal;
+  font-display: swap;
 }
 
 html {
@@ -36,6 +38,26 @@ p {
   max-width: 28rem;
 }
 
+::selection {
+  background-color: $c-dark-grey;
+  color: #fff;
+}
+
+.bigText {
+  font-size: map-get($ms, 1);
+  line-height: 1.4;
+  max-width: 34rem;
+
+  &--right {
+    text-align: right;
+
+    @include desktop {
+      margin-left: auto;
+      margin-right: rythm-units-desktop(4);
+    }
+  }
+}
+
 .oldStyle {
   font-variant-numeric: oldstyle-nums;
   -moz-font-feature-settings: "onum";
@@ -60,25 +82,8 @@ p {
   }
 }
 
-.hyphenated {
-  &::after {
-    content: "-";
-  }
-}
-
-.bigText {
-  font-size: map-get($ms, 1);
-  line-height: 1.4;
-  max-width: 34rem;
-
-  &--right {
-    text-align: right;
-
-    @include desktop {
-      margin-left: auto;
-      margin-right: rythm-units-desktop(4);
-    }
-  }
+.hyphenated::after {
+  content: "-";
 }
 
 .tiny {
@@ -159,6 +164,7 @@ p {
     line-height: 1.1;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    margin-bottom: rythm-units(1);
 
     @include desktop {
       margin-bottom: rythm-units-desktop(1);
@@ -252,9 +258,4 @@ p {
       }
     }
   }
-}
-
-::selection {
-  background-color: $c-dark-grey;
-  color: #fff;
 }

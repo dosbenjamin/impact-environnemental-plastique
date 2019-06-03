@@ -56,28 +56,6 @@
         transform: translateX(-50%);
       }
     }
-
-    // &::after {
-    //   @include pseudo;
-
-    //   height: 150vw;
-    //   width: 150vw;
-    //   left: -70%;
-    //   top: 20%;
-    //   bottom: 0;
-    //   background-color: $c-green-bright;
-    //   border-radius: 100%;
-
-    //   @include desktop {
-    //     height: rythm-units-desktop(35);
-    //     width: rythm-units-desktop(35);
-    //     left: -40%;
-    //     top: 0;
-    //     margin-top: auto;
-    //     z-index: -1;
-    //     // display: none;
-    //   }
-    // }
   }
 
   &__content {

@@ -108,6 +108,7 @@ ul {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  z-index: -1;
 
   @include desktop {
     top: rythm-units-desktop(-1);
@@ -119,11 +120,16 @@ ul {
     bottom: -25vw;
     left: -50vw;
     border-radius: 100%;
-    // top: -45%;
-    // right: -35%;
     height: 120vw;
     width: 120vw;
     background-color: $c-green;
+  }
+
+  &--last::before {
+    top: 38vmin;
+    right: -45vmin;
+    left: initial;
+    bottom: initial;
 
     @include desktop {
       max-height: rythm-units-desktop(45);

@@ -1,10 +1,33 @@
 document.body.classList.remove('noJS')
 
+// Menu
 const burgerMenu = document.querySelector('.menu__button')
 burgerMenu.addEventListener('click', () => {
   document.body.classList.toggle('menuOpen')
 })
 
+// Counter
+let currentCounter = 0
+let nextCounter = 0.25
+setInterval(() => {
+  const firstChild = document.querySelector('.counter__item:first-child')
+  const lastChild = document.querySelector('.counter__item:last-child')
+  currentCounter += 0.25
+  nextCounter += 0.25
+  firstChild.classList.add('counter__item--translate')
+  lastChild.classList.add('counter__item--translate')
+  lastChild.addEventListener('animationend', () => {
+    firstChild.before(lastChild)
+    firstChild.classList.remove('counter__item--translate')
+    lastChild.classList.remove('counter__item--translate')
+  })
+  setTimeout(() => {
+    firstChild.textContent = currentCounter
+    lastChild.textContent = nextCounter
+  }, 1000)
+}, 5000)
+
+// Datas
 const datas = document.querySelectorAll('.data')
 const infoButton = document.querySelectorAll('.infos__button')
 
@@ -46,6 +69,7 @@ infoButton.forEach(button => {
   })
 })
 
+//
 const dataOne = document.querySelector('.data[data-stats="2050"')
 const dataTwo = document.querySelector('.data[data-stats="year"')
 const dataThree = document.querySelector('.data[data-stats="yearBis"')
@@ -62,27 +86,7 @@ const dataThree = document.querySelector('.data[data-stats="yearBis"')
 //   }
 // })
 
-// Counter
-let counter = 0
-let nextCounter = 0.25
-setInterval(() => {
-  const firstChild = document.querySelector('.counter__item:first-child')
-  const lastChild = document.querySelector('.counter__item:last-child')
-  counter += 0.25
-  nextCounter += 0.25
-  firstChild.classList.add('counter__item--translate')
-  lastChild.classList.add('counter__item--translate')
-  lastChild.addEventListener('animationend', () => {
-    firstChild.before(lastChild)
-    firstChild.classList.remove('counter__item--translate')
-    lastChild.classList.remove('counter__item--translate')
-  })
-  setTimeout(() => {
-    firstChild.textContent = counter
-    lastChild.textContent = nextCounter
-  }, 1000)
-}, 5000)
-
+// Animation footer
 // const footer = document.querySelector('.footer')
 // const lastSection = document.querySelector('#lastSection')
 // let scrollValue = 0

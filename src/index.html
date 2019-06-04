@@ -17,8 +17,8 @@
         <button class="menu__button">Menu</button>
         <ul class="menu__container">
           <li class="menu__item"><a class="link link--grey" href="#">Case study</a></li>
-          <li class="menu__item"><a class="link link--grey" href="credits.html">Crédits</a></li>
           <li class="menu__item"><a class="link link--grey" href="a-propos.html">À propos</a></li>
+          <li class="menu__item"><a class="link link--grey" href="credits.html">Crédits</a></li>
         </ul>
       </nav>
       <p class="bigText">
@@ -36,7 +36,13 @@
           faits ainsi que des conséquences concernant le plastique.
         </p>
         <figure class="quote">
-          <img class="quote__image" src="assets/images/dechets.jpg" alt="Déchets plastiques dans la nature" />
+          <img class="quote__image"
+               srcset="assets/images/dechets-plastiques-small.jpg 475w,
+                       assets/images/dechets-plastiques-medium.jpg 950w,
+                       assets/images/dechets-plastiques-large.jpg 1425w,
+                       assets/images/dechets-plastiques-xlarge.jpg 2560w"
+               src="assets/images/dechets-plastiques-large.jpg" 
+               alt="Déchets plastiques dans la nature" />
           <blockquote class="quote__block">
             <p class="quote__content">
               Plastic is a man-made substance. It isn’t supposed to be in the environment and the environment has no way
@@ -98,7 +104,15 @@
           L'un des principales cause de la pollution plastique est l'utilisation de plastique à usage unique.
         </p>
         <div class="side">
-          <img class="pic pic--bags" src="assets/images/sacs-plastiques.jpg" alt="Sacs en plastiques" />
+        <picture>
+  
+        </picture>
+        <img class="pic pic--bags"
+             srcset="assets/images/sacs-plastiques-small.jpg 360w,
+                     assets/images/sacs-plastiques-medium.jpg 720w,
+                     assets/images/sacs-plastiques-large.jpg 1160w"
+             src="assets/images/sacs-plastiques-large.jpg" 
+             alt="Sacs en plastiques" />
           <p>
             Bouteilles en plastique, sacs plastique, emballages alimentaires, pailles, etc. Tout ces objets font
             maintenant partis de notre quotidien et sont tellement devenu une habitude qu'il est difficile de s'en
@@ -158,7 +172,19 @@
         <small aria-hidden="true" class="tiny tiny--center">
           Cliquez sur les cercles pour afficher les informations
         </small>
-        <img class="pic pic--animal" src="assets/images/plastique-animaux.jpg" alt="" />
+        <picture>
+          <source srcset="assets/images/plastique-animal-small.webp 450w,
+                          assets/images/plastique-animal-medium.webp 900w,
+                          assets/images/plastique-animal-large.webp 1350w,
+                          assets/images/plastique-animal-xlarge.webp 2560w" 
+                    type="image/webp">
+          <source srcset="assets/images/plastique-animal-small.jpg 450w,
+                          assets/images/plastique-animal-medium.jpg 900w,
+                          assets/images/plastique-animal-large.jpg 1350w,
+                          assets/images/plastique-animal-xlarge.jpg 2560w" 
+                    type="image/jpeg"> 
+          <img class="pic pic--animal" src="assets/images/plastique-animal-large.jpg" alt="Oiseau avec un sachet plastique dans le bec">
+        </picture>
         <ul class="infos">
           <li class="infos__item" data-info="yearBis">
             <h3 class="title title--small">Production<span class="lineBreak"></span> annuelle</h3>
@@ -232,8 +258,8 @@
           Réalisé avec par <span class="lineBreak"></span>
           <a class="link link--green" href="https://benjamindossantos.be">Benjamin Dos Santos</a>
           <span class="lineBreak"></span> pour
-          <a class="link link--green link--tooltip link--dwm" href="http://dwm.re">DWM</a> |
-          <a class="link link--green link--tooltip link--heaj" href="https://heaj.be">HEAJ</a>
+          <a class="link link--tooltip link--dwm" href="http://dwm.re">DWM</a> |
+          <a class="link link--tooltip link--heaj" href="https://heaj.be">HEAJ</a>
           &#169;
         </small>
       </div>

@@ -166,7 +166,7 @@ p {
 .link {
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
 
   @include desktop {
     &:hover {
@@ -179,16 +179,6 @@ p {
 
       &:hover {
         outline: 0;
-      }
-    }
-  }
-
-  &--green {
-    color: $c-green;
-
-    @include desktop {
-      &:hover {
-        color: $c-middle-grey;
       }
     }
   }

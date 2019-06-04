@@ -5,6 +5,7 @@ const burgerMenu = document.querySelector('.menu__button')
 burgerMenu.addEventListener('click', () => {
   document.body.classList.toggle('menuOpen')
 })
+// Fin menu
 
 // Counter
 let currentCounter = 0
@@ -26,65 +27,64 @@ setInterval(() => {
     lastChild.textContent = nextCounter
   }, 1000)
 }, 5000)
+// Fin counter
 
-// Datas
-const datas = document.querySelectorAll('.data')
-const infoButton = document.querySelectorAll('.infos__button')
-
-datas.forEach(data => {
-  data.addEventListener('click', e => {
-    const stat = e.target.getAttribute('data-stats')
-    const active = document.querySelector('.infos__item--active')
-    active != null && active.classList.remove('infos__item--active')
-    const toDisplay = document.querySelector(`.infos__item[data-info="${stat}"]`)
-    toDisplay.classList.add('infos__item--active')
-  })
-  data.addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
-      const stat = e.target.getAttribute('data-stats')
-      const active = document.querySelector('.infos__item--active')
-      active != null && active.classList.remove('infos__item--active')
-      const toDisplay = document.querySelector(`.infos__item[data-info="${stat}"]`)
-      toDisplay.classList.add('infos__item--active')
-    }
-  })
-})
-
-document.addEventListener('focusin', e => {
-  const isData = e.target.classList[0]
-  const active = document.querySelector('.infos__item--active')
-  isData !== 'data' && active != null && active.classList.remove('infos__item--active')
-})
-
-document.addEventListener('focusout', () => {
-  const active = document.querySelector('.infos__item--active')
+// Data
+let parent
+const allData = document.querySelectorAll('.data')
+const infoFadeOut = item => {
+  item.classList.remove('infos__item--noTransition')
+  item.classList.add('infos__item--leaving')
   setTimeout(() => {
-    active != null && active.classList.remove('infos__item--active')
-  }, 100)
-})
-
-infoButton.forEach(button => {
-  button.addEventListener('click', e => {
-    e.target.parentElement.classList.remove('infos__item--active')
+    item.classList.remove('infos__item--leaving')
+    item.classList.remove('infos__item--active')
+    document.activeElement.blur()
+  }, 300)
+}
+const displayInfo = e => {
+  const stat = e.target.getAttribute('data-stats')
+  const active = document.querySelector('.infos__item--active')
+  const toDisplay = document.querySelector(`.infos__item[data-info="${stat}"]`)
+  active && active.classList.remove('infos__item--active')
+  active && active.classList.add('infos__item--noTransition')
+  toDisplay.classList.add('infos__item--active')
+}
+allData.forEach(data => {
+  data.addEventListener('click', displayInfo)
+  data.addEventListener('keydown', e => {
+    e.key === 'Enter' && displayInfo(e)
+  })
+  data.addEventListener('mouseover', e => {
+    e.target.classList.add('data--hover')
+  })
+  data.addEventListener('mouseout', e => {
+    e.target.classList.remove('data--hover')
   })
 })
+document.addEventListener('focusin', e => {
+  parent = e.target
+  while (parent.parentElement.classList[0] === 'data') {
+    parent = parent.parentElement
+  }
+})
+document.addEventListener('focusout', e => {
+  // const active = document.querySelector('.infos__item--active')
+  // if (e.target.classList[0] === 'data') {
+  //   infoFadeOut(active)
+  // }
+})
 
-//
-const dataOne = document.querySelector('.data[data-stats="2050"')
-const dataTwo = document.querySelector('.data[data-stats="year"')
-const dataThree = document.querySelector('.data[data-stats="yearBis"')
-
-// window.addEventListener('scroll', () => {
-//   const active = document.querySelector('.infos__item--active')
-//   const activeHeight = active.getBoundingClientRect().height
-//   if (dataOne.getBoundingClientRect().top <= activeHeight && dataOne.getBoundingClientRect().top > 0) {
-//     active != null && active.classList.remove('infos__item--active')
-//   } else if (dataTwo.getBoundingClientRect().top <= activeHeight && dataTwo.getBoundingClientRect().top > 0) {
-//     active != null && active.classList.remove('infos__item--active')
-//   } else if (dataThree.getBoundingClientRect().top <= activeHeight && dataThree.getBoundingClientRect().top > 0) {
-//     active != null && active.classList.remove('infos__item--active')
-//   }
-// })
+window.addEventListener('scroll', () => {
+  if (parent !== undefined && document.querySelector('.infos__item--active')) {
+    const dataHeight = parent.getBoundingClientRect().height
+    const dataOffsetTop = parent.getBoundingClientRect().top
+    const stats = document.activeElement.getAttribute('data-stats')
+    const toRemove = document.querySelector(`.infos__item--active[data-info="${stats}"]`)
+    dataOffsetTop <= dataHeight / -4 && infoFadeOut(toRemove)
+    window.innerHeight - dataOffsetTop <= dataHeight / 4 && infoFadeOut(toRemove)
+  }
+})
+// Fin data
 
 // Animation footer
 // const footer = document.querySelector('.footer')

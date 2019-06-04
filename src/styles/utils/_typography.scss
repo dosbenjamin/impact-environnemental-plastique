@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Source Sans";
   src:
-    url("../assets/fonts/SourceSansVariable-Roman.ttf.woff") format("woff"),
-    url("../assets/fonts/SourceSansVariable-Roman.ttf.woff2") format("woff2");
+    url("../assets/fonts/SourceSansVariable-Roman.ttf.woff2") format("woff2"),
+    url("../assets/fonts/SourceSansVariable-Roman.ttf.woff") format("woff");
   font-weight: 1 999;
   font-style: normal;
   font-display: swap;
@@ -185,14 +185,34 @@ p {
 
   &--grey {
     color: $c-dark-grey;
+    display: block;
+    position: relative;
 
     @include desktop {
       &:focus {
         outline-color: $c-dark-grey;
       }
 
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: rythm-units-desktop(-0.25);
+        left: 0;
+        display: block;
+        height: 2px;
+        background-color: $c-dark-grey;
+        width: 50%;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 150ms;
+      }
+
       &:hover {
-        color: $c-light-grey;
+        color: inherit;
+
+        &::after {
+          transform: scaleX(1);
+        }
       }
     }
   }

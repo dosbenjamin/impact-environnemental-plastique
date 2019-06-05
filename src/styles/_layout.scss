@@ -175,12 +175,19 @@ body[data-page="about"] {
       width: 70vw;
       max-width: 28rem;
       margin: 0 auto;
+    }
+
+    @include desktop {
       padding: rythm-units-desktop(6) rythm-units-desktop(1);
     }
 
     &--today {
       padding-top: rythm-units(3);
       padding-bottom: rythm-units(3);
+
+      @include tablet {
+        padding: rythm-units(4) rythm-units(1);
+      }
 
       @include desktop {
         padding: rythm-units-desktop(6) rythm-units-desktop(1);

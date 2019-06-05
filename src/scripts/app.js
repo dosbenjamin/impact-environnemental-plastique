@@ -1,3 +1,5 @@
+'use strict'
+
 document.body.classList.remove('noJS')
 
 // Menu
@@ -30,7 +32,7 @@ setInterval(() => {
 // Fin counter
 
 // Data
-let parent
+let oldParent, parent, active
 const allData = document.querySelectorAll('.data')
 const infoFadeOut = item => {
   item.classList.remove('infos__item--noTransition')
@@ -40,14 +42,15 @@ const infoFadeOut = item => {
     item.classList.remove('infos__item--active')
     document.activeElement.blur()
   }, 300)
+  active = null
 }
 const displayInfo = e => {
   const stat = e.target.getAttribute('data-stats')
-  const active = document.querySelector('.infos__item--active')
   const toDisplay = document.querySelector(`.infos__item[data-info="${stat}"]`)
   active && active.classList.remove('infos__item--active')
   active && active.classList.add('infos__item--noTransition')
   toDisplay.classList.add('infos__item--active')
+  active = document.querySelector('.infos__item--active')
 }
 allData.forEach(data => {
   data.addEventListener('click', displayInfo)
@@ -62,20 +65,29 @@ allData.forEach(data => {
   })
 })
 document.addEventListener('focusin', e => {
+  const removeAndFocus = () => {
+    infoFadeOut(active)
+    setTimeout(() => {
+      e.target.focus()
+    }, 300)
+  }
   parent = e.target
   while (parent.parentElement.classList[0] === 'data') {
     parent = parent.parentElement
   }
+  const parentStat = parent.getAttribute('data-stats')
+  if (oldParent !== undefined && parent.classList[0] === 'data' && oldParent.getAttribute('data-stats') !== parentStat && active) {
+    removeAndFocus()
+  } else if (e.target.classList[0] !== 'data' && active) {
+    removeAndFocus()
+  }
+  oldParent = parent
 })
-document.addEventListener('focusout', e => {
-  // const active = document.querySelector('.infos__item--active')
-  // if (e.target.classList[0] === 'data') {
-  //   infoFadeOut(active)
-  // }
+document.addEventListener('click', e => {
+  e.target.classList[0] !== 'data' && active && infoFadeOut(active)
 })
-
 window.addEventListener('scroll', () => {
-  if (parent !== undefined && document.querySelector('.infos__item--active')) {
+  if (parent !== undefined && active) {
     const dataHeight = parent.getBoundingClientRect().height
     const dataOffsetTop = parent.getBoundingClientRect().top
     const stats = document.activeElement.getAttribute('data-stats')

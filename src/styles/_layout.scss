@@ -94,22 +94,28 @@ ul {
 }
 
 .side {
-  .bigText {
-    margin-bottom: rythm-units(1);
-  }
-
   @include desktop {
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
     align-items: center;
+  }
 
-    &__text {
-      margin-top: rythm-units-desktop(8);
+  .bigText {
+    margin-bottom: rythm-units(1);
+
+    @include desktop {
+      margin-bottom: rythm-units-desktop(1);
+    }
+  }
+
+  &__text {
+    @include desktop {
+      margin-right: rythm-units-desktop(3);
     }
 
-    .bigText {
-      margin-bottom: rythm-units-desktop(1);
+    @include desktopXL {
+      margin-top: rythm-units-desktop(8);
     }
   }
 }

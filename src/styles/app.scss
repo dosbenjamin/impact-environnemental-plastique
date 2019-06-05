@@ -4,9 +4,12 @@
 @import "utils/mixins";
 @import "layout";
 @import "utils/typography";
+@import "utils/animations";
 
 // Components
 @import "components/navigation";
 @import "components/quote";
 @import "components/data";
+@import "components/infos";
 @import "components/counter";
+@import "components/footer";

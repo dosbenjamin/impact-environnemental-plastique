@@ -1,18 +1,16 @@
 .quote {
   margin: rythm-units(2) 0 0 0;
-  width: calc(100vw - 26.1px);
 
   @include tablet {
-    width: calc(100vw - 78.3px);
+    margin: rythm-units(3) 0 0 0;
   }
 
   @include desktop {
-    margin: rythm-units-desktop(4) 0 0 0;
-    width: 100%;
+    margin: rythm-units-desktop(5) 0 0 0;
   }
 
   &__image {
-    height: rythm-units(9);
+    height: rythm-units(10);
     width: 100%;
     object-fit: cover;
     object-position: right;
@@ -30,16 +28,16 @@
   &__block {
     font-size: map-get($ms, 1);
     font-weight: 600;
-    padding: rythm-units(2) rythm-units(1.5) rythm-units(2) rythm-units(2);
-    margin: 0;
+    padding: rythm-units(3) rythm-units(1.5) rythm-units(2) rythm-units(2);
+    margin: rythm-units(-1) 0 0 0;
     position: relative;
 
     @include tablet {
-      padding: rythm-units(3) rythm-units(2.5) rythm-units(3) rythm-units(3);
+      padding: rythm-units(4) rythm-units(2.5) rythm-units(3) rythm-units(3);
     }
 
     @include desktop {
-      padding: rythm-units-desktop(3) rythm-units-desktop(2) rythm-units-desktop(3) rythm-units-desktop(2);
+      padding: rythm-units-desktop(3) rythm-units-desktop(2) rythm-units-desktop(4) rythm-units-desktop(2);
       margin-top: rythm-units-desktop(-1);
     }
 
@@ -47,19 +45,12 @@
       @include pseudo;
 
       height: 100%;
-      width: 100%;
+      width: 100vw;
+      transform: translateX(-50%);
+      left: 50%;
       background-color: $c-light-grey;
       top: 0;
-      left: 0;
       z-index: -1;
-
-      @include desktop {
-        width: 100vw;
-        left: 50%;
-        bottom: 0;
-        margin-top: auto;
-        transform: translateX(-50%);
-      }
     }
   }
 

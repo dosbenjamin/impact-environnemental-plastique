@@ -1,0 +1,65 @@
+@keyframes dataMoving {
+  0% {
+    transform: translate(0, 40%);
+  }
+
+  10% {
+    transform: translate(10%, 30%);
+  }
+
+  20% {
+    transform: translate(5%, 25%);
+  }
+
+  30% {
+    transform: translate(20%, 20%);
+  }
+
+  40% {
+    transform: translate(5%, 15%);
+  }
+
+  50% {
+    transform: translate(20%, 40%);
+  }
+
+  60% {
+    transform: translate(30%, 10%);
+  }
+
+  70% {
+    transform: translate(5%, 25%);
+  }
+
+  80% {
+    transform: translate(30%, 20%);
+  }
+
+  90% {
+    transform: translate(20%, 10%);
+  }
+
+  100% {
+    transform: translate(0, 30%);
+  }
+}
+
+@keyframes dataMovingAlt {
+  0% {
+    transform: translate(0.5%, 0%);
+  }
+
+  50% {
+    transform: translate(5%, 1.5%);
+  }
+
+  100% {
+    transform: translate(1%, 1.5%);
+  }
+}
+
+@keyframes counter {
+  to {
+    transform: translateY(100%);
+  }
+}

@@ -1,0 +1,39 @@
+.footer {
+  position: relative;
+  z-index: 2;
+}
+
+.footerMenu {
+  margin-bottom: rythm-units(2);
+
+  @include desktop {
+    margin-bottom: 0;
+  }
+
+  &__item {
+    text-align: center;
+
+    @include desktop {
+      text-align: left;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rythm-units(1);
+
+      @include desktop {
+        margin-bottom: rythm-units-desktop(1);
+      }
+    }
+  }
+
+  + .tiny {
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+
+    @include desktop {
+      margin: 0;
+      align-self: flex-end;
+      text-align: right;
+    }
+  }
+}

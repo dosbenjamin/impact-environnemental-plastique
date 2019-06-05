@@ -1,21 +1,17 @@
-@supports (font-variation-settings: "wdth" 115) {
+@supports (font-variation-settings: normal) {
   @font-face {
     font-family: "Source Sans";
-    src:
-      url("../assets/fonts/SourceSansVariable-Roman.ttf.woff2") format("woff2"),
-      url("../assets/fonts/SourceSansVariable-Roman.ttf.woff") format("woff");
+    src: url("../assets/fonts/SourceSansVariable-Roman.ttf.woff2") format("woff2"), url("../assets/fonts/SourceSansVariable-Roman.ttf.woff") format("woff");
     font-weight: 1 999;
     font-style: normal;
     font-display: swap;
   }
 }
 
-@supports not (font-variation-settings: "wdth" 115) {
+@supports not (font-variation-settings: normal) {
   @font-face {
     font-family: "Source Sans";
-    src:
-      url("../assets/fonts/SourceSansPro-Regular.otf.woff2") format("woff2"),
-      url("../assets/fonts/SourceSansPro-Regular.otf.woff") format("woff");
+    src: url("../assets/fonts/SourceSansPro-Regular.otf.woff2") format("woff2"), url("../assets/fonts/SourceSansPro-Regular.otf.woff") format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -23,9 +19,7 @@
 
   @font-face {
     font-family: "Source Sans";
-    src:
-      url("../assets/fonts/SourceSansPro-Semibold.otf.woff2") format("woff2"),
-      url("../assets/fonts/SourceSansPro-Semibold.otf.woff") format("woff");
+    src: url("../assets/fonts/SourceSansPro-Semibold.otf.woff2") format("woff2"), url("../assets/fonts/SourceSansPro-Semibold.otf.woff") format("woff");
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -33,9 +27,7 @@
 
   @font-face {
     font-family: "Source Sans";
-    src:
-      url("../assets/fonts/SourceSansPro-Bold.otf.woff2") format("woff2"),
-      url("../assets/fonts/SourceSansPro-Bold.otf.woff") format("woff");
+    src: url("../assets/fonts/SourceSansPro-Bold.otf.woff2") format("woff2"), url("../assets/fonts/SourceSansPro-Bold.otf.woff") format("woff");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -61,10 +53,6 @@ body {
   -webkit-font-feature-settings: "liga", "clig";
   font-feature-settings: "liga", "clig";
   color: $c-dark-grey;
-
-  @include desktop {
-    line-height: $leading-desktop;
-  }
 }
 
 p {
@@ -72,24 +60,21 @@ p {
   max-width: 28rem;
 }
 
-::selection {
-  background-color: $c-dark-grey;
-  color: #fff;
+.textRight {
+  @include desktop {
+    margin-left: auto;
+  }
 }
 
 .bigText {
   font-size: map-get($ms, 1);
   line-height: 1.4;
   max-width: 34rem;
+}
 
-  &--right {
-    text-align: right;
-    margin-left: auto;
-
-    @include desktop {
-      margin-right: rythm-units-desktop(4);
-    }
-  }
+::selection {
+  background-color: $c-dark-grey;
+  color: #fff;
 }
 
 .oldStyle {
@@ -140,8 +125,7 @@ p {
   margin: 0 0 rythm-units(2) 0;
 
   @include desktop {
-    font-size: map-get($ms, 4);
-    margin: 0 0 rythm-units-desktop(2) 0;
+    margin: 0 0 rythm-units-desktop(3) 0;
   }
 
   &::after {
@@ -160,7 +144,6 @@ p {
 
   &--headline {
     line-height: 1.1;
-    margin: 0 0 rythm-units(2) 0;
     font-size: 9.5vw;
 
     @include tablet {

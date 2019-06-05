@@ -107,11 +107,9 @@
     max-width: 15rem;
     display: inline-block;
     line-height: 1.12;
-  }
-}
 
-@keyframes counter {
-  to {
-    transform: translateY(100%);
+    @include desktop {
+      margin-top: rythm-units-desktop(1);
+    }
   }
 }

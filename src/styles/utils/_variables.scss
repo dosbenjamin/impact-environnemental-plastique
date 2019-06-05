@@ -9,9 +9,8 @@ $c-dark-grey: #383838;
 $text-size: 18px;
 $text-size-desktop: 20px;
 $leading: 1.45;
-$leading-desktop: 1.45;
 $unit-value: $text-size * $leading;
-$unit-value-desktop: $text-size-desktop * $leading-desktop;
+$unit-value-desktop: $text-size-desktop * $leading;
 $ms: (
   _1: 0.75rem,
   0: 1rem,

@@ -9,10 +9,10 @@
     background-image: url(../assets/images/menu.svg);
     background-repeat: no-repeat;
     background-color: transparent;
-    background-size: calc(100% / 4);
+    background-size: 25%;
     background-position: center;
-    width: 4rem;
-    height: 4rem;
+    width: rythm-units(3);
+    height: rythm-units(3);
     text-indent: 100%;
     padding: 0;
     white-space: nowrap;
@@ -32,47 +32,33 @@
   &__container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     position: fixed;
-    height: 100vh;
+    padding: rythm-units(3) 0;
     width: 100vw;
-    background-color: $c-green-bright;
+    background-color: $c-green;
     top: 0;
     left: 0;
     z-index: 1;
     transition: transform 250ms;
-    transform: translateX(100%);
-    overflow: hidden;
+    transform: translateY(-100%);
+    border-bottom: 10px solid #fff;
 
-    @include desktop {
-      flex-direction: row;
-      position: initial;
-      height: initial;
-      width: initial;
-      transform: initial;
-      overflow: initial;
+    @include tablet {
+      padding: rythm-units(4) 0;
     }
 
-    &::before {
-      @include pseudo;
-
-      height: 200vw;
-      width: 200vw;
-      top: 75%;
-      right: -32%;
-      border-radius: 100%;
-      background-color: #fff;
-      border: 10px solid $c-green;
-      z-index: -1;
-
-      @include desktop {
-        display: none;
-      }
+    @include desktop {
+      padding: initial;
+      background-color: unset;
+      border: unset;
+      flex-direction: row;
+      position: initial;
+      width: initial;
+      transform: initial;
     }
   }
 
   &__item {
-    margin: 0 auto;
     text-align: center;
     font-size: map-get($ms, 2);
 
@@ -104,7 +90,7 @@
 
   .menu {
     &__container {
-      transform: translateX(0);
+      transform: translateY(0);
     }
   }
 }

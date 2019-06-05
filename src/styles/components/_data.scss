@@ -1,72 +1,13 @@
-@keyframes moving {
-  0% {
-    transform: translate(0, 40%);
-  }
-
-  10% {
-    transform: translate(10%, 30%);
-  }
-
-  20% {
-    transform: translate(5%, 25%);
-  }
-
-  30% {
-    transform: translate(20%, 20%);
-  }
-
-  40% {
-    transform: translate(5%, 15%);
-  }
-
-  50% {
-    transform: translate(20%, 40%);
-  }
-
-  60% {
-    transform: translate(30%, 10%);
-  }
-
-  70% {
-    transform: translate(5%, 25%);
-  }
-
-  80% {
-    transform: translate(30%, 20%);
-  }
-
-  90% {
-    transform: translate(20%, 10%);
-  }
-
-  100% {
-    transform: translate(0, 30%);
-  }
-}
-
-@keyframes movingAlt {
-  0% {
-    transform: translate(0.5%, 0%);
-  }
-
-  50% {
-    transform: translate(5%, 1.5%);
-  }
-
-  100% {
-    transform: translate(1%, 1.5%);
-  }
-}
-
 .data {
   border-radius: 100%;
   width: 80vmin;
   height: 80vmin;
   background-color: $c-dark-grey;
   position: relative;
-  margin: rythm-units(2) auto 0 auto;
+  margin: rythm-units(3) auto 0 auto;
 
   @include tablet {
+    margin: rythm-units(4) auto 0 auto;
     width: 65vmin;
     height: 65vmin;
   }
@@ -74,11 +15,11 @@
   @include desktop {
     width: 60vmin;
     height: 60vmin;
-    margin: rythm-units-desktop(3) auto 0 auto;
+    margin: rythm-units-desktop(4) auto 0 auto;
     cursor: pointer;
 
     + .tiny {
-      margin-top: rythm-units-desktop(1);
+      margin-top: rythm-units-desktop(2);
       width: 60vmin;
       max-width: initial;
     }
@@ -94,7 +35,6 @@
     top: -6px;
     border-radius: 100%;
     border: 2px solid $c-dark-grey;
-    z-index: -1;
     opacity: 0;
     transition: opacity 300ms;
   }
@@ -127,13 +67,13 @@
     top: 5%;
     left: 20%;
     animation-iteration-count: infinite;
-    animation-name: moving;
+    animation-name: dataMoving;
     animation-direction: alternate;
     animation-duration: 40s;
   }
 
   &--animateAlt {
-    animation-name: movingAlt;
+    animation-name: dataMovingAlt;
   }
 
   &--reverse {
@@ -202,73 +142,39 @@
     }
   }
 
-  + .tiny {
-    margin-top: rythm-units(1);
-  }
-}
-
-@include desktop {
-  .data[data-stats="2050"] {
+  &[data-stats="2050"] {
     margin-right: 0;
 
-    + .tiny {
-      margin-right: 0;
+    @include desktop {
+      + .tiny {
+        margin-right: 0;
+      }
     }
   }
 
-  .data[data-stats="year"] {
-    margin-left: 0;
+  &[data-stats="year"] {
+    @include desktop {
+      margin-top: rythm-units-desktop(7);
+    }
+  }
 
-    + .tiny {
+  &[data-stats="yearBis"] {
+    @include desktop {
+      margin-top: rythm-units-desktop(6);
       margin-left: 0;
+
+      + .tiny {
+        margin-left: 0;
+      }
     }
   }
-}
 
-.infos {
-  &__item {
-    background-color: $c-green;
-    padding: rythm-units(1);
-    position: fixed;
-    visibility: hidden;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 3;
-    transition: opacity 300ms;
-
-    @include tablet {
-      margin: 0 auto;
-      top: initial;
-      bottom: rythm-units(1);
-      width: rythm-units(10);
-    }
+  + .tiny {
+    margin-top: rythm-units(1);
 
     @include desktop {
-      padding: rythm-units-desktop(1);
-      width: rythm-units-desktop(10);
-      bottom: rythm-units-desktop(3);
+      margin-top: rythm-units-desktop(1.5);
     }
-
-    &--active {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    &--leaving {
-      visibility: visible;
-      opacity: 0;
-    }
-
-    &--noTransition {
-      transition: initial;
-    }
-  }
-
-  &__number {
-    font-weight: 700;
-    text-transform: uppercase;
   }
 }
 

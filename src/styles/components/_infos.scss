@@ -1,0 +1,46 @@
+.infos {
+  &__item {
+    background-color: $c-green;
+    padding: rythm-units(1);
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    transition: opacity 300ms;
+
+    @include tablet {
+      margin: 0 auto;
+      top: initial;
+      bottom: rythm-units(1);
+      width: rythm-units(10);
+    }
+
+    @include desktop {
+      padding: rythm-units-desktop(1);
+      width: rythm-units-desktop(10);
+      bottom: rythm-units-desktop(3);
+    }
+
+    &--active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &--leaving {
+      visibility: visible;
+      opacity: 0;
+    }
+
+    &--noTransition {
+      transition: initial;
+    }
+  }
+
+  &__number {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}

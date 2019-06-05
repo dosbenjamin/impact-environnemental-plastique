@@ -12,15 +12,8 @@ ul {
   list-style: none;
 }
 
-body {
-  @include desktop {
-    overflow-x: hidden;
-  }
-}
-
 .section {
   position: relative;
-  overflow: hidden;
   padding: rythm-units(3) rythm-units(1);
 
   @include tablet {
@@ -31,8 +24,7 @@ body {
     width: 80vw;
     max-width: 1280px;
     margin: 0 auto;
-    overflow: visible;
-    padding: rythm-units-desktop(5) rythm-units-desktop(1);
+    padding: rythm-units-desktop(6) rythm-units-desktop(1);
   }
 
   &--bg::before {
@@ -48,6 +40,10 @@ body {
   }
 
   &--header {
+    @include tablet {
+      padding: rythm-units(5) rythm-units(3);
+    }
+
     @include desktop {
       padding: rythm-units-desktop(6) 0;
     }
@@ -58,10 +54,6 @@ body {
 
     &::before {
       background-color: $c-green-bright;
-      width: 100vw;
-      height: 100%;
-      left: 50%;
-      transform: translateX(-50%);
       top: initial;
       bottom: 0;
       border-bottom: 10px solid $c-green;
@@ -91,31 +83,45 @@ body {
     padding-top: rythm-units(2);
     padding-bottom: 0;
 
+    @include tablet {
+      padding-top: rythm-units(3);
+    }
+
     @include desktop {
-      padding-top: rythm-units-desktop(4);
+      padding-top: rythm-units-desktop(5);
     }
   }
 }
 
 .side {
+  .bigText {
+    margin-bottom: rythm-units(1);
+  }
+
   @include desktop {
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
-    margin-top: rythm-units-desktop(3);
     align-items: center;
 
-    p {
-      margin-top: rythm-units-desktop(5);
-      margin-right: rythm-units-desktop(2);
+    &__text {
+      margin-top: rythm-units-desktop(8);
+    }
+
+    .bigText {
+      margin-bottom: rythm-units-desktop(1);
     }
   }
 }
 
 .pic {
   display: block;
-  margin: rythm-units(2) 0 rythm-units(2) rythm-units(-1);
+  margin: rythm-units(2.5) 0 rythm-units(3) rythm-units(-1);
   object-fit: cover;
+
+  @include tablet {
+    margin: rythm-units(3.5) 0 rythm-units(3) rythm-units(-1);
+  }
 
   @include desktop {
     margin: 0 0 0 auto;
@@ -127,69 +133,31 @@ body {
 
     @include tablet {
       width: 60%;
-      margin-left: rythm-units(-3);
+      margin-right: rythm-units(-3);
+      margin-left: auto;
     }
 
     @include desktop {
       width: 45%;
       height: 100%;
-      margin-left: 0;
+      margin-right: 0;
     }
   }
 
   &--animal {
     width: 100%;
-    margin: rythm-units(2) 0 rythm-units(0) rythm-units(1);
+    margin: rythm-units(3) 0 rythm-units(0) rythm-units(1);
+    height: rythm-units(9);
 
     @include tablet {
       height: rythm-units(14);
-      margin: rythm-units(2) auto 0 auto;
+      margin: rythm-units(4) auto 0 auto;
     }
 
     @include desktop {
-      height: rythm-units-desktop(20);
-      margin: rythm-units-desktop(3) 0 0 0;
+      height: rythm-units-desktop(19);
+      margin: rythm-units-desktop(4) 0 0 0;
       object-position: 50% 60%;
-    }
-  }
-}
-
-.footer {
-  position: relative;
-  z-index: 2;
-}
-
-.footerMenu {
-  margin-bottom: rythm-units(2);
-
-  @include desktop {
-    margin-bottom: 0;
-  }
-
-  &__item {
-    text-align: center;
-
-    @include desktop {
-      text-align: left;
-    }
-
-    &:not(:last-child) {
-      margin-bottom: rythm-units(1);
-
-      @include desktop {
-        margin-bottom: rythm-units-desktop(1);
-      }
-    }
-  }
-
-  + .tiny {
-    line-height: 1.5;
-    letter-spacing: 0.5px;
-
-    @include desktop {
-      margin: 0;
-      align-self: flex-end;
-      text-align: right;
     }
   }
 }

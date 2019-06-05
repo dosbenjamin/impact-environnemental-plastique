@@ -60,6 +60,10 @@ p {
   max-width: 28rem;
 }
 
+strong {
+  font-weight: 700;
+}
+
 .textRight {
   @include desktop {
     margin-left: auto;
@@ -89,6 +93,18 @@ p {
   -moz-font-feature-settings: "frac";
   -webkit-font-feature-settings: "frac";
   font-feature-settings: "frac";
+}
+
+.smallCaps {
+  font-variant: small-caps;
+  font-feature-settings: "smcp";
+}
+
+.sup {
+  font-variant-position: super;
+  -moz-font-feature-settings: "sups";
+  -webkit-font-feature-settings: "sups";
+  font-feature-settings: "sups";
 }
 
 .lineBreak {
@@ -273,6 +289,39 @@ p {
           transform: scaleX(1);
         }
       }
+    }
+  }
+}
+
+.list {
+  &__item {
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      top: 0;
+      left: rythm-units(-0.5);
+    }
+  }
+}
+
+body[data-page="about"] {
+  p {
+    margin-bottom: rythm-units(1);
+
+    @include desktop {
+      margin-bottom: rythm-units-desktop(1);
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  .title {
+    &--headline {
+      margin-bottom: rythm-units(1);
     }
   }
 }

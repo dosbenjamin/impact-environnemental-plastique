@@ -1,6 +1,6 @@
 'use strict'
 
-document.body.classList.remove('noJS')
+document.documentElement.classList.remove('noJS')
 
 // Menu
 const burgerMenu = document.querySelector('.menu__button')
@@ -76,11 +76,8 @@ document.addEventListener('focusin', e => {
     parent = parent.parentElement
   }
   const parentStat = parent.getAttribute('data-stats')
-  if (oldParent !== undefined && parent.classList[0] === 'data' && oldParent.getAttribute('data-stats') !== parentStat && active) {
-    removeAndFocus()
-  } else if (e.target.classList[0] !== 'data' && active) {
-    removeAndFocus()
-  }
+  if (oldParent !== undefined && parent.classList[0] === 'data' && oldParent.getAttribute('data-stats') !== parentStat && active) removeAndFocus()
+  else if (e.target.classList[0] !== 'data' && active) removeAndFocus()
   oldParent = parent
 })
 document.addEventListener('click', e => {

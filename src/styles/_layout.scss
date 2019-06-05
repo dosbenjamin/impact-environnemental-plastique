@@ -167,3 +167,52 @@ ul {
     }
   }
 }
+
+body[data-page="about"] {
+  .section {
+    @include tablet {
+      padding: rythm-units(4) rythm-units(1);
+      width: 70vw;
+      max-width: 28rem;
+      margin: 0 auto;
+      padding: rythm-units-desktop(6) rythm-units-desktop(1);
+    }
+
+    &--today {
+      padding-top: rythm-units(3);
+      padding-bottom: rythm-units(3);
+
+      @include desktop {
+        padding: rythm-units-desktop(6) rythm-units-desktop(1);
+      }
+    }
+
+    &--header {
+      padding: rythm-units(3) rythm-units(1);
+
+      @include tablet {
+        padding-top: rythm-units(5);
+        padding-bottom: rythm-units(5);
+      }
+
+      @include desktop {
+        padding: rythm-units-desktop(6) rythm-units-desktop(1);
+      }
+
+      .bigText {
+        margin: 0;
+      }
+    }
+
+    &--darkGrey {
+      @include tablet {
+        padding: rythm-units(4) rythm-units(3);
+      }
+
+      @include desktop {
+        padding-top: rythm-units-desktop(4);
+        padding-bottom: rythm-units-desktop(4);
+      }
+    }
+  }
+}

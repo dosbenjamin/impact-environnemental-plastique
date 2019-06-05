@@ -70,11 +70,6 @@
       font-size: map-get($ms, 5);
       height: map-get($ms, 5);
     }
-
-    @include desktop {
-      font-size: map-get($ms, 6);
-      height: map-get($ms, 6);
-    }
   }
 
   &__item {
@@ -85,10 +80,6 @@
 
     @include tablet {
       height: map-get($ms, 5);
-    }
-
-    @include desktop {
-      height: map-get($ms, 6);
     }
 
     &--translate {
@@ -116,8 +107,14 @@
       display: none;
     }
 
-    &__post--JS {
+    &__post {
+      max-width: 14rem;
+      @include desktop {
+        max-width: 20rem;
+      }
+     &--JS {
       display: none;
+    }
     }
   }
 }

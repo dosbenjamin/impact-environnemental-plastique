@@ -179,6 +179,7 @@ body[data-page="about"] {
 
     @include desktop {
       padding: rythm-units-desktop(6) rythm-units-desktop(1);
+      max-width: 34rem;
     }
 
     &--today {

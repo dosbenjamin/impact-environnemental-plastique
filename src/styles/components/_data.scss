@@ -13,14 +13,14 @@
   }
 
   @include desktop {
-    width: 60vmin;
-    height: 60vmin;
+    width: 75vmin;
+    height: 75vmin;
     margin: rythm-units-desktop(4) auto 0 auto;
     cursor: pointer;
 
     + .tiny {
       margin-top: rythm-units-desktop(2);
-      width: 60vmin;
+      width: 75vmin;
       max-width: initial;
     }
   }
@@ -154,18 +154,13 @@
 
   &[data-stats="year"] {
     @include desktop {
-      margin-top: rythm-units-desktop(7);
+      margin-top: rythm-units-desktop(5);
     }
   }
 
   &[data-stats="yearBis"] {
     @include desktop {
-      margin-top: rythm-units-desktop(6);
-      margin-left: 0;
-
-      + .tiny {
-        margin-left: 0;
-      }
+      margin-top: rythm-units-desktop(5);
     }
   }
 

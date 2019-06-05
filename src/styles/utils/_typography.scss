@@ -100,13 +100,6 @@ strong {
   font-feature-settings: "smcp";
 }
 
-.sup {
-  font-variant-position: super;
-  -moz-font-feature-settings: "sups";
-  -webkit-font-feature-settings: "sups";
-  font-feature-settings: "sups";
-}
-
 .lineBreak {
   display: block;
 
@@ -260,14 +253,23 @@ strong {
 
   &--grey {
     color: $c-dark-grey;
-    display: block;
-    position: relative;
 
     @include desktop {
       &:focus {
         outline-color: $c-dark-grey;
       }
 
+      &:hover {
+        color: $c-middle-grey;
+      }
+    }
+  }
+
+  &--underline {
+    display: block;
+    position: relative;
+
+    @include desktop {
       &::after {
         @include pseudo;
 
@@ -311,6 +313,7 @@ body[data-page="about"] {
     margin-bottom: rythm-units(1);
 
     @include desktop {
+      max-width: 34rem;
       margin-bottom: rythm-units-desktop(1);
     }
 

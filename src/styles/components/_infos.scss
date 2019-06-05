@@ -44,3 +44,36 @@
     text-transform: uppercase;
   }
 }
+
+.noJS {
+  .infos {
+    margin-top: rythm-units(2);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: rythm-units(1);
+
+    @include tablet {
+      margin-top: rythm-units(3);
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: rythm-units(1);
+    }
+
+    @include desktop {
+      margin-top: rythm-units-desktop(5);
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: rythm-units-desktop(1);
+      grid-row-gap: rythm-units-desktop(1);
+    }
+
+    &__item {
+      box-sizing: border-box;
+      position: initial;
+      visibility: visible;
+      opacity: 1;
+
+      @include tablet {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -181,5 +181,9 @@
 .noJS {
   .data {
     display: none;
+
+    + .tiny {
+      display: none;
+    }
   }
 }

@@ -146,12 +146,12 @@ ul {
 
   &--animal {
     width: 100%;
-    margin: rythm-units(3) 0 rythm-units(0) rythm-units(1);
+    margin: rythm-units(2) 0 rythm-units(0) rythm-units(1);
     height: rythm-units(9);
 
     @include tablet {
       height: rythm-units(14);
-      margin: rythm-units(4) auto 0 auto;
+      margin: rythm-units(3) auto 0 auto;
     }
 
     @include desktop {

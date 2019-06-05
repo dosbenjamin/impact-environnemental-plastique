@@ -113,3 +113,15 @@
     }
   }
 }
+
+.noJS {
+  .counter {
+    &__number--JS {
+      display: none;
+    }
+
+    &__post--JS {
+      display: none;
+    }
+  }
+}

@@ -7,18 +7,18 @@
     <link rel="canonical" href="https://benjamindossantos.be/projets/tfa/" />
     <title>Side Project - Impact environnemental du cycle de vie des plastiques - TFA - DWM/HEAJ</title>
     <meta name="author" content="Benjamin Dos Santos" />
-    <meta name="description" content="Information et data visualization à propos du plastique et de son impact sur l'environnement et la planète." />
+    <meta name="description" content="Data visualization à propos du plastique et de son impact sur l'environnement et la planète." />
     <meta itemprop="name" content="Side Project - Impact environnemental du cycle de vie des plastiques - TFA - DWM/HEAJ" />
-    <meta itemprop="description" content="Information et data visualization à propos du plastique et de son impact sur l'environnement et la planète." />
+    <meta itemprop="description" content="Data visualization à propos du plastique et de son impact sur l'environnement et la planète." />
     <meta itemprop="image" content="https://benjamindossantos.be/projets/tfa/assets/images/preview.svg" />
     <meta property="og:url" content="https://benjamindossantos.be/projets/tfa" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Side Project - Impact environnemental du cycle de vie des plastiques - TFA - DWM/HEAJ" />
-    <meta property="og:description" content="Information et data visualization à propos du plastique et de son impact sur l'environnement et la planète." />
+    <meta property="og:description" content="Data visualization à propos du plastique et de son impact sur l'environnement et la planète." />
     <meta property="og:image" content="https://benjamindossantos.be/projets/tfa/assets/images/preview.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Side Project - Impact environnemental du cycle de vie des plastiques - TFA - DWM/HEAJ" />
-    <meta name="twitter:description" content="Information et data visualization à propos du plastique et de son impact sur l'environnement et la planète." />
+    <meta name="twitter:description" content="Data visualization à propos du plastique et de son impact sur l'environnement et la planète." />
     <meta name="twitter:image" content="https://benjamindossantos.be/projets/tfa/assets/images/preview.svg" />
     <meta name="apple-mobile-web-app-title" content="Impact environnemental du cycle de vie des plastiques" />
     <meta name="application-name" content="Impact environnemental du cycle de vie des plastiques" />
@@ -40,13 +40,13 @@
   <body data-id="data">
     <header class="section section--bg section--header">
       <h1 class="title title--headline">
-        Impact<span class="lineBreak lineBreak--notDesktop"></span> environnemental<span class="lineBreak"></span> du cycle de vie <span class="lineBreak lineBreak--notDesktop"></span>des
+        Impact <span class="lineBreak lineBreak--notDesktop"></span> environnemental<span class="lineBreak"></span> du cycle de vie <span class="lineBreak lineBreak--notDesktop"></span>des
         plastiques
       </h1>
       <nav class="menu">
         <button class="menu__button">Menu</button>
         <ul class="menu__container">
-          <li class="menu__item"><a class="link link--grey link--underline" href="#">Case study</a></li>
+          <li class="menu__item"><a class="link link--grey link--underline" href="case-study.html">Case study</a></li>
           <li class="menu__item"><a class="link link--grey link--underline" href="a-propos.html">À propos</a></li>
           <li class="menu__item"><a class="link link--grey link--underline" href="credits.html">Crédits</a></li>
         </ul>
@@ -64,17 +64,29 @@
           plastique et ses effets sur&nbsp;la&nbsp;planète.
         </p>
         <figure class="quote">
-          <img
-            class="quote__image"
-            srcset="
-              assets/images/dechets-plastiques-xlarge.jpg 2560w,
-              assets/images/dechets-plastiques-large.jpg  1660w,
-              assets/images/dechets-plastiques-medium.jpg  950w,
-              assets/images/dechets-plastiques-small.jpg   475w
-            "
-            src="assets/images/dechets-plastiques-large.jpg"
-            alt="Déchets plastiques dans la nature"
-          />
+          <picture>
+            <source
+              srcset="
+                assets/images/dechets-plastiques-xlarge.webp 2560w,
+                assets/images/dechets-plastiques-large.webp  1660w,
+                assets/images/dechets-plastiques-medium.webp  950w,
+                assets/images/dechets-plastiques-small.webp   475w
+              "
+              sizes="(max-width: 500px) 90vw, (max-width: 960px) 85vw, 75vw"
+              type="image/webp"
+            />
+            <source
+              srcset="
+                assets/images/dechets-plastiques-xlarge.jpg 2560w,
+                assets/images/dechets-plastiques-large.jpg  1660w,
+                assets/images/dechets-plastiques-medium.jpg  950w,
+                assets/images/dechets-plastiques-small.jpg   475w
+              "
+              sizes="(max-width: 500px) 90vw, (max-width: 960px) 85vw, 75vw"
+              type="image/jpeg"
+            />
+            <img class="quote__image" src="assets/images/dechets-plastiques-large.jpg" alt="Déchets plastiques dans la nature" />
+          </picture>
           <blockquote class="quote__block">
             <p class="quote__content">
               Plastic is a man-made substance. It isn’t supposed to be in the environment and the environment has no way of dealing with it, so it is building up and poisoning our earth like
@@ -127,14 +139,20 @@
       </section>
       <section class="section section--bg">
         <h2 class="title"><span class="hyphenated">Utili</span><span class="lineBreak"></span>sation</h2>
-
         <div class="side">
-          <img
-            class="pic pic--bags"
-            srcset="assets/images/sacs-plastiques-small.jpg 360w, assets/images/sacs-plastiques-medium.jpg 720w, assets/images/sacs-plastiques-large.jpg 1152w"
-            src="assets/images/sacs-plastiques-large.jpg"
-            alt="Sacs en plastiques"
-          />
+          <picture>
+            <source
+              srcset="assets/images/sacs-plastiques-large.webp 1152w, assets/images/sacs-plastiques-medium.webp 720w, assets/images/sacs-plastiques-small.webp 360w"
+              sizes="(max-width: 960px) 75vw, 35vw"
+              type="image/webp"
+            />
+            <source
+              srcset="assets/images/sacs-plastiques-large.jpg 1152w, assets/images/sacs-plastiques-medium.jpg 720w, assets/images/sacs-plastiques-small.jpg 360w"
+              sizes="(max-width: 960px) 75vw, 35vw"
+              type="image/jpeg"
+            />
+            <img class="pic pic--bags" src="assets/images/sacs-plastiques-large.jpg" alt="Sacs en plastique" />
+          </picture>
           <div class="side__text">
             <p class="bigText">
               L’utilisation de plastique à usage unique est l’une des principales causes de la pollution&nbsp;plastique.
@@ -184,21 +202,24 @@
           de plus en plus petit et fini par contaminer les eaux et en étant ingéré par&nbsp;les&nbsp;animaux.
         </p>
         <picture>
-          <!-- <source
-            srcset="assets/images/plastique-animal-small.webp 450w,
-              assets/images/plastique-animal-medium.webp 900w,
-              assets/images/plastique-animal-large.webp 1350w,
-              assets/images/plastique-animal-xlarge.webp 2560w"
-            type="image/webp"
-          /> -->
           <source
             srcset="
-              assets/images/plastique-animal-small.jpg   447w,
-              assets/images/plastique-animal-medium.jpg  894w,
-              assets/images/plastique-animal-large.jpg  1606w,
-              assets/images/plastique-animal-xlarge.jpg 2560w
+              assets/images/plastique-animal-xlarge.webp 2560w,
+              assets/images/plastique-animal-large.webp  1606w,
+              assets/images/plastique-animal-medium.webp  894w,
+              assets/images/plastique-animal-small.webp   447w
             "
-            sizes="100vw"
+            sizes="(max-width: 500px) 90vw, (max-width: 960px) 85vw, 75vw"
+            type="image/webp"
+          />
+          <source
+            srcset="
+              assets/images/plastique-animal-xlarge.jpg 2560w,
+              assets/images/plastique-animal-large.jpg  1606w,
+              assets/images/plastique-animal-medium.jpg  894w,
+              assets/images/plastique-animal-small.jpg   447w
+            "
+            sizes="(max-width: 500px) 90vw, (max-width: 960px) 85vw, 75vw"
             type="image/jpeg"
           />
           <img class="pic pic--animal" src="assets/images/plastique-animal-large.jpg" alt="Oiseau avec un sachet plastique dans le bec" />

@@ -94,17 +94,3 @@
     }
   }
 }
-
-body[data-page="about"] {
-  .menu {
-    @include desktop {
-      width: 100%;
-    }
-
-    &__container {
-      @include desktop {
-        justify-content: center;
-      }
-    }
-  }
-}

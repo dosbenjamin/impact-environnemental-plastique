@@ -143,9 +143,9 @@
   }
 
   &[data-stats="2050"] {
-    margin-right: 0;
-
     @include desktop {
+      margin-right: 0;
+
       + .tiny {
         margin-right: 0;
       }

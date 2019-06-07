@@ -5,6 +5,7 @@
   background-color: $c-dark-grey;
   position: relative;
   margin: rythm-units(3) auto 0 auto;
+  display: block;
 
   @include tablet {
     margin: rythm-units(4) auto 0 auto;

@@ -110,8 +110,24 @@ strong {
   }
 }
 
-.hyphenated::after {
-  content: "-";
+.hyphenated {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 55%;
+    left: 102%;
+    transform: translateY(-50%);
+    height: 6px;
+    width: 19px;
+    background-color: $c-dark-grey;
+
+    @include desktop {
+      height: 7px;
+    }
+  }
 }
 
 .tiny {
@@ -304,6 +320,29 @@ strong {
 }
 
 .list {
+  &--wrap {
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      height: rythm-units(8);
+    }
+
+    @include desktop {
+      height: rythm-units-desktop(7);
+    }
+  }
+
+  &--wrapSmall {
+    @include tablet {
+      height: rythm-units(5);
+    }
+
+    @include desktop {
+      height: rythm-units-desktop(4);
+    }
+  }
+
   &__item {
     position: relative;
 
@@ -312,6 +351,10 @@ strong {
       position: absolute;
       top: 0;
       left: rythm-units(-0.5);
+
+      @include desktop {
+        left: rythm-units-desktop(-0.5);
+      }
     }
   }
 }

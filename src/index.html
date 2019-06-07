@@ -106,10 +106,10 @@
           population. L’utilisation des énergies fossiles est principalement utilisée dans cette industrie, ce qui par conséquent augmente drastiquement le rejet de gaz à effets de serre,
           sans oublier tous les produits chimiques qui eux aussi ont un impact non&nbsp;négligeable&nbsp;sur&nbsp;l’environnement.
         </p>
-        <div tabindex="0" class="data data--green" data-stats="2050">
-          <div tabindex="0" class="data data--darkGrey data--animate" data-stats="2019"></div>
-          <div tabindex="0" class="data data--middleGrey data--animate data--reverse" data-stats="2000"></div>
-        </div>
+        <span tabindex="0" class="data data--green" data-stats="2050">
+          <span tabindex="0" class="data data--darkGrey data--animate" data-stats="2019"></span>
+          <span tabindex="0" class="data data--middleGrey data--animate data--reverse" data-stats="2000"></span>
+        </span>
         <small aria-hidden="true" class="tiny tiny--center">
           Cliquez sur les cercles pour afficher les informations
         </small>
@@ -163,9 +163,13 @@
             </p>
           </div>
         </div>
-        <div tabindex="0" class="data" data-stats="year">
+        <div role="region" tabindex="0" class="data" data-stats="year">
+          <span class="data__mark">1</span>
           <div tabindex="0" class="data data--green data--animate data--reverse" data-stats="unique">
-            <div tabindex="0" class="data data--middleGrey data--animate" data-stats="packaging"></div>
+            <span class="data__mark">2</span>
+            <div tabindex="0" class="data data--middleGrey data--animate" data-stats="packaging">
+              <span class="data__mark">3</span>
+            </div>
           </div>
         </div>
         <small aria-hidden="true" class="tiny tiny--center">
@@ -307,7 +311,7 @@
         </ul>
         <small class="tiny tiny--center">
           Réalisé par <span class="lineBreak"></span>
-          <a class="link link--green" target="_blank" rel="noopener noreferrer" href="https://benjamindossantos.be">Benjamin Dos Santos</a>
+          <a class="link link--green" href="https://benjamindossantos.be">Benjamin Dos Santos</a>
           <span class="lineBreak"></span> pour <a class="link link--tooltip link--dwm" target="_blank" rel="noopener noreferrer" href="http://dwm.re">DWM</a> |
           <a class="link link--tooltip link--heaj" target="_blank" rel="noopener noreferrer" href="https://heaj.be">HEAJ</a>
           2019 &#169;

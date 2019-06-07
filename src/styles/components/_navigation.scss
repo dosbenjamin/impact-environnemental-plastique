@@ -9,7 +9,7 @@
     background-image: url(../assets/images/menu.svg);
     background-repeat: no-repeat;
     background-color: transparent;
-    background-size: 25%;
+    background-size: rythm-units(1);
     background-position: center;
     width: rythm-units(3);
     height: rythm-units(3);
@@ -23,6 +23,7 @@
     outline: 0;
     border: 0;
     z-index: 2;
+    transition: transform 400ms;
 
     @include desktop {
       display: none;
@@ -91,6 +92,11 @@
   .menu {
     &__container {
       transform: translateY(0);
+    }
+
+    &__button {
+      background-image: url(../assets/images/cross.svg);
+      transform: rotateX(180deg);
     }
   }
 }

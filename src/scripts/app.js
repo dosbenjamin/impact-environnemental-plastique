@@ -9,25 +9,25 @@ burgerMenu.addEventListener('click', () => {
 
 const dataPage = () => {
   // Counter
-  let currentCounter = 0
-  let nextCounter = 0.25
-  setInterval(() => {
-    const firstChild = document.querySelector('.counter__item:first-child')
-    const lastChild = document.querySelector('.counter__item:last-child')
-    currentCounter += 0.25
-    nextCounter += 0.25
-    firstChild.classList.add('counter__item--translate')
-    lastChild.classList.add('counter__item--translate')
-    lastChild.addEventListener('animationend', () => {
-      firstChild.before(lastChild)
-      firstChild.classList.remove('counter__item--translate')
-      lastChild.classList.remove('counter__item--translate')
-    })
-    setTimeout(() => {
-      firstChild.textContent = currentCounter
-      lastChild.textContent = nextCounter
-    }, 1000)
-  }, 5000)
+  // let currentCounter = 0
+  // let nextCounter = 0.25
+  // setInterval(() => {
+  //   const firstChild = document.querySelector('.counter__item:first-child')
+  //   const lastChild = document.querySelector('.counter__item:last-child')
+  //   currentCounter += 0.25
+  //   nextCounter += 0.25
+  //   firstChild.classList.add('counter__item--translate')
+  //   lastChild.classList.add('counter__item--translate')
+  //   lastChild.addEventListener('animationend', () => {
+  //     firstChild.before(lastChild)
+  //     firstChild.classList.remove('counter__item--translate')
+  //     lastChild.classList.remove('counter__item--translate')
+  //   })
+  //   setTimeout(() => {
+  //     firstChild.textContent = currentCounter
+  //     lastChild.textContent = nextCounter
+  //   }, 1000)
+  // }, 5000)
   // Data
   let oldParent, parent, active
   const allData = document.querySelectorAll('.data')
